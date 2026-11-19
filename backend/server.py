@@ -25,9 +25,13 @@ mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
 
-# ── Email configuration (Emergent-managed Resend proxy) ────────────
-EMAIL_BASE_URL = "https://integrations.emergentagent.com"
-EMAIL_KEY = os.environ.get("EMERGENT_EMAIL_KEY", "").strip()
+# — Email configuration (Direct Resend API) —
+RESEND_API_URL = "https://api.resend.com/emails"
+RESEND_API_KEY = os.environ.get("RESEND_API_KEY", "").strip()
+RESEND_FROM_EMAIL = os.environ.get(
+    "RESEND_FROM_EMAIL",
+    "Apollo Builders <notifications@apollobuilders.com.au>"
+)
 EMAIL_FROM_NAME = os.environ.get("EMAIL_FROM_NAME", "Apollo Builders Website")
 ENQUIRY_RECIPIENT_EMAIL = os.environ.get('ENQUIRY_RECIPIENT_EMAIL', 'info@apollobuilders.com.au')
 MIN_SUBMIT_SECONDS = int(os.environ.get('MIN_SUBMIT_SECONDS', '3'))
@@ -178,33 +182,55 @@ def _build_email_html(e: Enquiry) -> str:
     """
 
 
+
 async def _send_notification_email(enquiry: Enquiry) -> bool:
-    """POST the enquiry via the Emergent-managed Resend proxy.
-    Returns True on 2xx, False on any failure — never raises."""
-    if not EMAIL_KEY:
-        logging.info("Email provider not configured — enquiry stored, email skipped.")
+    """Send enquiry notification directly through the Resend API.
+
+    Returns True if Resend accepts the email request.
+    Returns False on failure without raising an exception.
+    """
+    if not RESEND_API_KEY:
+        logging.info(
+            "Resend API key not configured — enquiry stored, email skipped."
+        )
         return False
+
     payload = {
+        "from": RESEND_FROM_EMAIL,
         "to": [ENQUIRY_RECIPIENT_EMAIL],
-        "subject": f"New Website Enquiry — {enquiry.project_type} — {enquiry.name}",
+        "subject": (
+            f"New Website Enquiry — {enquiry.project_type} — {enquiry.name}"
+        ),
         "html": _build_email_html(enquiry),
-        "from_name": EMAIL_FROM_NAME,
-        "contact_email": str(enquiry.email),
+        "reply_to": str(enquiry.email),
     }
+
     try:
         async with httpx.AsyncClient(timeout=30) as http:
             resp = await http.post(
-                f"{EMAIL_BASE_URL}/api/v1/email/send",
-                headers={"X-Email-Key": EMAIL_KEY},
+                RESEND_API_URL,
+                headers={
+                    "Authorization": f"Bearer {RESEND_API_KEY}",
+                    "Content-Type": "application/json",
+                },
                 json=payload,
             )
+
         resp.raise_for_status()
         return True
+
     except httpx.HTTPStatusError as ex:
-        logging.error(f"Email dispatch failed: {ex.response.status_code}")
+        logging.error(
+            "Resend email dispatch failed: HTTP %s",
+            ex.response.status_code,
+        )
         return False
+
     except Exception as ex:
-        logging.error(f"Email dispatch error: {type(ex).__name__}")
+        logging.error(
+            "Resend email dispatch error: %s",
+            type(ex).__name__,
+        )
         return False
 
 
@@ -213,16 +239,25 @@ def _is_spam(payload: EnquiryCreate) -> bool:
     if payload.website and payload.website.strip():
         logging.info("Enquiry rejected: honeypot triggered.")
         return True
+
     if payload.form_loaded_at:
         try:
             now_ms = datetime.now(timezone.utc).timestamp() * 1000
-            elapsed_sec = (now_ms - float(payload.form_loaded_at)) / 1000.0
+            elapsed_sec = (
+                now_ms - float(payload.form_loaded_at)
+            ) / 1000.0
+
             if elapsed_sec < MIN_SUBMIT_SECONDS:
-                logging.info(f"Enquiry rejected: submitted too fast ({elapsed_sec:.2f}s).")
+                logging.info(
+                    f"Enquiry rejected: submitted too fast ({elapsed_sec:.2f}s)."
+                )
                 return True
+
         except Exception:
             pass
+
     return False
+
 
 
 # ── Routes ────────────────────────────────────────────────────────────
@@ -233,7 +268,7 @@ async def root():
 
 @api_router.get("/health")
 async def health():
-    return {"status": "healthy", "email_provider": "configured" if EMAIL_KEY else "pending"}
+    return {"status": "healthy", "email_provider": "configured" if RESEND_API_KEY else "pending"}
 
 
 @api_router.post("/enquiries", response_model=EnquiryResponse, status_code=201)
@@ -243,7 +278,7 @@ async def create_enquiry(request: Request, payload: EnquiryCreate):
 
     Response returns only { id, email_sent } — no PII is echoed to callers.
     All PII stays server-side (MongoDB) and is forwarded to
-    info@apollobuilders.com.au via the Emergent-managed Resend proxy.
+    the configured recipient via the direct Resend API.
     """
     # Silent spam rejection — return a normal-looking success shape.
     if _is_spam(payload):
