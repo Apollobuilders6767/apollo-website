@@ -36,10 +36,12 @@ import MelbourneHomeBuilders from "@/pages/MelbourneHomeBuilders";
 import NotFound from "@/pages/NotFound";
 
 /* New Melbourne SEO pages */
-import HomeRenovationsMelbourne from "@/pages/HomeRenovationsMelbourne";
-import HouseExtensionsMelbourne from "@/pages/HouseExtensionsMelbourne";
+import HomeRenovationsMelbourne from "@/pages/Home Renovations page";
+import HouseExtensionsMelbourne from "./pages/HouseExtensionsPage";
 import CustomHomeBuildersMelbourne from "@/pages/CustomHomeBuildersMelbourne";
-import NewHomeBuildersMelbourne from "@/pages/NewHomeBuildersMelbourne";
+import NewHomeBuildersMelbourne from "@/pages/NewHomeBuildersPage";
+import BathroomRenovationsPage from "@/pages/BathroomRenovationsPage";
+import KitchenRenovationsPage from "@/pages/KitchenRenovationsPage";
 import KnockDownRebuildMelbourne from "@/pages/KnockDownRebuildMelbourne";
 import DesignBuildMelbourne from "@/pages/DesignBuildMelbourne";
 
@@ -93,7 +95,7 @@ function SmoothScroll({ children }) {
   return children;
 }
 
-// Legacy nested services URL → flat top-level URL
+// Legacy nested services URL â†’ flat top-level URL
 function ServiceSlugRedirect() {
   const { slug } = useParams();
 
@@ -135,15 +137,15 @@ function App() {
                   element={<ServicePage />}
                 />
 
-                <Route
-                  path="/bathroom-renovations"
-                  element={<ServicePage />}
-                />
+              <Route
+                path="/bathroom-renovations"
+                element={<BathroomRenovationsPage />}
+              />
 
-                <Route
-                  path="/kitchen-renovations"
-                  element={<ServicePage />}
-                />
+              <Route
+                path="/kitchen-renovations"
+                element={<KitchenRenovationsPage />}
+              />
 
                 <Route
                   path="/contact-us"
@@ -230,7 +232,7 @@ function App() {
                   element={<DesignBuildMelbourne />}
                 />
 
-                {/* OLD Design & Build URL → NEW URL */}
+                {/* OLD Design & Build URL â†’ NEW URL */}
                 <Route
                   path="/design-build-builders-melbourne"
                   element={

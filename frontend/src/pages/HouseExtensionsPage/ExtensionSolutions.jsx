@@ -1,0 +1,333 @@
+
+import { useState } from "react";
+import { ChevronDown, ImageIcon } from "lucide-react";
+import { Reveal } from "@/components/Reveal";
+
+const solutions = [
+  {
+    id: "rear-extensions",
+    title: "Rear Extensions",
+    subtitle: "Creating more usable living space",
+    heading: "Rear House Extensions",
+    image: "/images/extension-solutions/rear-extensions.png",
+    paragraphs: [
+      "Rear extensions are a popular way to increase the usable living area of a property.",
+      "A rear extension can create space for a larger kitchen, dining area, family room or connection to an outdoor entertaining area.",
+      "The design needs to consider the existing footprint, backyard, access, natural light and relationship between the original house and the new addition.",
+    ],
+  },
+  {
+    id: "second-storey",
+    title: "Building Up",
+    subtitle: "Making the most of available space",
+    heading: "Second Storey Extensions",
+    image: "/images/extension-solutions/second-storey.png",
+    paragraphs: [
+      "Where the available ground-floor space is limited, building upwards can provide another solution.",
+      "A second-storey extension can potentially create additional bedrooms, bathrooms, living areas or private spaces without consuming as much backyard area.",
+      "However, second-storey projects involve significant structural and planning considerations.",
+      "The existing building needs to be assessed and the proposed extension needs to be carefully integrated into the home.",
+    ],
+  },
+  {
+    id: "combined-projects",
+    title: "Combined Projects",
+    subtitle: "Extensions and renovations together",
+    heading: "Extensions and Renovations Together",
+    image: "/images/extension-solutions/combined-projects.png",
+    paragraphs: [
+      "Many homeowners don't simply need more space.",
+      "They need the existing home to work better.",
+      "That's why an extension is often combined with a renovation.",
+      "For example, a rear extension could create a larger kitchen and living area while the existing part of the house is updated at the same time.",
+      "This can produce a more cohesive result than treating the extension and renovation as completely separate projects.",
+    ],
+  },
+  {
+    id: "old-meets-new",
+    title: "Old Meets New",
+    subtitle: "Connecting the original home and new space",
+    heading: "Designing an Extension That Feels Like Part of Your Home",
+    image: "/images/extension-solutions/old-meets-new.png",
+    paragraphs: [
+      "One of the biggest challenges with an extension is making the new space feel connected to the original home.",
+      "The finished result should ideally feel intentional.",
+      "Materials, flooring, ceiling heights, windows, doors, lighting and room proportions all influence the connection between old and new.",
+      "Apollo Builders focuses on the project as a whole rather than treating the extension as an isolated addition.",
+    ],
+  },
+  {
+    id: "indoor-outdoor",
+    title: "Indoor-Outdoor Living",
+    subtitle: "Connecting indoor and alfresco spaces",
+    heading: "Indoor-Outdoor Extensions",
+    image: "/images/extension-solutions/indoor-outdoor.png",
+    paragraphs: [
+      "An extension can also completely change how a family uses its backyard.",
+      "Large openings between kitchens, dining areas and alfresco spaces can create a stronger connection between inside and outside.",
+      "Apollo's Endeavour Hills project incorporated a new kitchen, bathroom and decked alfresco area as part of a full renovation.",
+    ],
+  },
+];
+
+function SolutionCard({
+  solution,
+  index,
+  isActive,
+  onToggle,
+}) {
+  const [imageFailed, setImageFailed] = useState(false);
+
+  return (
+    <div className="relative min-w-0">
+      <Reveal delay={index * 0.04}>
+        <button
+          type="button"
+          aria-expanded={isActive}
+          aria-controls={`extension-details-${solution.id}`}
+          onClick={onToggle}
+          className={`group flex h-full w-full flex-col overflow-hidden rounded-2xl border text-left transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#B78A3E] ${
+            isActive
+              ? "border-[#C5A05B] bg-white shadow-[0_12px_30px_rgba(20,25,30,0.12)]"
+              : "border-[#E6D8C4] bg-white shadow-[0_4px_18px_rgba(20,25,30,0.06)] hover:-translate-y-1 hover:border-[#C5A05B] hover:shadow-[0_12px_30px_rgba(20,25,30,0.10)]"
+          }`}
+        >
+          {/* Card image */}
+          <div className="relative h-[160px] w-full overflow-hidden bg-[#F0E7D9] sm:h-[175px] lg:h-[185px]">
+            {!imageFailed ? (
+              <img
+                src={solution.image}
+                alt={`${solution.title} architectural design concept`}
+                loading="lazy"
+                decoding="async"
+                onError={() => setImageFailed(true)}
+                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+              />
+            ) : (
+              <div className="flex h-full w-full items-center justify-center bg-[#F0E7D9]">
+                <ImageIcon
+                  className="h-9 w-9 text-[#B78A3E]/60"
+                  strokeWidth={1.2}
+                  aria-hidden="true"
+                />
+              </div>
+            )}
+
+            {isActive && (
+              <div className="absolute right-3 top-3 rounded-full bg-white/95 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-[#A47B34] shadow-sm">
+                Viewing Details
+              </div>
+            )}
+          </div>
+
+          {/* Card content */}
+          <div className="flex w-full flex-1 flex-col justify-between p-4 lg:p-5">
+            <div className="flex items-start justify-between gap-3">
+              <h3 className="min-w-0 font-display text-[21px] leading-[1.2] tracking-[-0.015em] text-[#172A3A] lg:text-[23px]">
+                {solution.title}
+              </h3>
+
+              <span
+                className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
+                  isActive
+                    ? "rotate-180 border-[#B78A3E] bg-[#B78A3E] text-white"
+                    : "border-[#E6D8C4] text-[#536170] group-hover:border-[#B78A3E]"
+                }`}
+              >
+                <ChevronDown
+                  className="h-4 w-4"
+                  strokeWidth={1.7}
+                  aria-hidden="true"
+                />
+              </span>
+            </div>
+
+            <p className="mt-3 text-[13px] leading-[1.6] text-[#536170]">
+              {solution.subtitle}
+            </p>
+          </div>
+        </button>
+      </Reveal>
+
+      {isActive && (
+        <div
+          aria-hidden="true"
+          className="absolute -bottom-4 left-1/2 z-10 h-4 w-[2px] -translate-x-1/2 bg-[#C5A05B]"
+        />
+      )}
+    </div>
+  );
+}
+
+function SolutionDetails({ solution }) {
+  return (
+    <div
+      id={`extension-details-${solution.id}`}
+      role="region"
+      aria-label={solution.heading}
+      className="relative w-full min-w-0 overflow-hidden rounded-2xl border border-[#C5A05B] bg-[#FFFCF8] shadow-[0_12px_35px_rgba(20,25,30,0.08)]"
+    >
+      {/* Top gold line */}
+      <div
+        aria-hidden="true"
+        className="h-[3px] w-full bg-gradient-to-r from-[#B78A3E] via-[#D5B47C] to-[#E8D9C1]"
+      />
+
+      <div className="mx-auto w-full max-w-[1000px] px-5 py-8 sm:px-8 md:px-10 md:py-10">
+        {/* Details heading */}
+        <div className="text-center">
+          <div className="mb-4 flex items-center justify-center gap-3">
+            <span className="h-px w-7 bg-[#B78A3E]" />
+
+            <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#A47B34]">
+              {solution.title}
+            </span>
+
+            <span className="h-px w-7 bg-[#B78A3E]" />
+          </div>
+
+          <h3 className="mx-auto max-w-[850px] font-display text-[28px] leading-[1.12] tracking-[-0.025em] text-[#172A3A] sm:text-[34px] md:text-[40px]">
+            {solution.heading}
+          </h3>
+
+          <div
+            aria-hidden="true"
+            className="mx-auto mt-5 h-[2px] w-14 bg-[#C5A05B]"
+          />
+        </div>
+
+        {/* Original content */}
+        <div className="mx-auto mt-8 max-w-[900px] space-y-5">
+          {solution.paragraphs.map((paragraph, index) => (
+            <p
+              key={index}
+              className={
+                index === 0
+                  ? "border-l-[3px] border-[#C5A05B] bg-[#F7F0E5]/70 px-5 py-4 text-[16px] font-medium leading-[1.85] text-[#273746] md:text-[17px]"
+                  : "text-[15px] leading-[1.9] text-[#536170] md:text-[16px]"
+              }
+            >
+              {paragraph}
+            </p>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function ExtensionSolutions() {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const toggleCard = (index) => {
+    setActiveIndex((current) =>
+      current === index ? null : index
+    );
+  };
+
+  const renderRows = (columns) => {
+    const rows = [];
+
+    for (
+      let start = 0;
+      start < solutions.length;
+      start += columns
+    ) {
+      const rowSolutions = solutions.slice(
+        start,
+        start + columns
+      );
+
+      const isRowActive =
+        activeIndex !== null &&
+        activeIndex >= start &&
+        activeIndex < start + columns;
+
+      rows.push(
+        <div key={start} className="w-full min-w-0">
+          {/* Cards row */}
+          <div
+            className={`grid items-stretch gap-4 ${
+              columns === 3
+                ? "grid-cols-3"
+                : columns === 2
+                  ? "grid-cols-2"
+                  : "grid-cols-1"
+            }`}
+          >
+            {rowSolutions.map((solution, offset) => {
+              const index = start + offset;
+
+              return (
+                <SolutionCard
+                  key={solution.id}
+                  solution={solution}
+                  index={index}
+                  isActive={activeIndex === index}
+                  onToggle={() => toggleCard(index)}
+                />
+              );
+            })}
+          </div>
+
+          {/* Expanded details panel */}
+          {isRowActive && (
+            <div className="mt-4">
+              <SolutionDetails
+                solution={solutions[activeIndex]}
+              />
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    return rows;
+  };
+
+  return (
+    <section
+      id="extension-solutions"
+      className="w-full overflow-x-clip bg-[#F7F3EC] py-14 md:py-20 lg:py-24"
+    >
+      <div className="mx-auto w-full max-w-[1180px] px-4 sm:px-6 lg:px-8">
+
+        {/* Main section heading */}
+        <Reveal>
+          <div className="mx-auto flex max-w-[850px] flex-col items-center text-center">
+            <div className="mb-4 flex items-center justify-center gap-3">
+              <span className="h-px w-7 bg-[#B78A3E]" />
+
+              <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#A47B34]">
+                Our Extension Solutions
+              </span>
+
+              <span className="h-px w-7 bg-[#B78A3E]" />
+            </div>
+
+            <h2 className="font-display text-[34px] leading-[1.08] tracking-[-0.025em] text-[#172A3A] sm:text-[40px] md:text-[46px] lg:text-[50px]">
+              Explore Our House Extension Solutions
+            </h2>
+
+            <div className="mx-auto mt-5 h-[2px] w-14 bg-[#C5A05B]" />
+          </div>
+        </Reveal>
+
+        {/* Desktop: 3 cards per row */}
+        <div className="mt-10 hidden w-full flex-col gap-4 lg:flex">
+          {renderRows(3)}
+        </div>
+
+        {/* Tablet: 2 cards per row */}
+        <div className="mt-10 hidden w-full flex-col gap-4 sm:flex lg:hidden">
+          {renderRows(2)}
+        </div>
+
+        {/* Mobile: 1 card per row */}
+        <div className="mt-10 flex w-full flex-col gap-4 sm:hidden">
+          {renderRows(1)}
+        </div>
+      </div>
+    </section>
+  );
+}
