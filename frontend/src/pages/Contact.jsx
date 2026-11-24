@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-import axios from "axios";
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { Reveal, MaskLines } from "@/components/Reveal";
+import AttributionFields from "@/components/AttributionFields";
 import { brand, projectTypes, suburbs } from "@/lib/data";
+import { submitEnquiry } from "@/lib/enquiries";
 import SEO, { localBusiness, breadcrumbSchema } from "@/components/SEO";
-
-const API = "/api";
+import OptimizedImage from "@/components/OptimizedImage";
 
 const initial = {
   name: "",
@@ -53,8 +53,9 @@ export default function Contact() {
     setSubmitting(true);
 
     try {
-      await axios.post(`${API}/enquiries`, {
+      await submitEnquiry({
         ...form,
+        form_name: "contact",
         form_loaded_at: formLoadedAt.current,
       });
 
@@ -64,12 +65,7 @@ export default function Contact() {
 
       navigate("/thank-you/");
     } catch (err) {
-      const msg =
-        err?.response?.data?.detail?.[0]?.msg ||
-        err?.response?.data?.detail ||
-        "Something went wrong. Please try again.";
-
-      toast.error(String(msg));
+      toast.error(err.userMessage || "Something went wrong. Please try again.");
     } finally {
       setSubmitting(false);
     }
@@ -99,7 +95,7 @@ export default function Contact() {
       {/* Editorial hero */}
       <section className="relative pt-16 md:pt-28 pb-24 md:pb-32 overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <OptimizedImage
             src="/images/apollo/Drouin-New-Build.jpg"
             alt=""
             className="w-full h-full object-cover opacity-25"
@@ -135,6 +131,7 @@ export default function Contact() {
             data-testid="enquiry-form"
             className="border-t border-[color:var(--paper)]/15"
           >
+            <AttributionFields />
             {/* Honeypot */}
             <div
               aria-hidden="true"

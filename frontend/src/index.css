@@ -17,7 +17,8 @@
     --ink-soft: #4A5262;       /* secondary body — accessible slate */
     --gold: #C5892D;           /* Apollo signature amber */
     --gold-soft: #B08544;
-    --gold-dark: #8F6817;
+    /* Darkened one step from #8F6817 so gold text on --paper clears 4.5:1 (was 4.47:1). */
+    --gold-dark: #8E6716;
     --accent-blue: #046BD2;
 
     /* shadcn tokens */

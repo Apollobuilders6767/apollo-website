@@ -1,13 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-import axios from "axios";
 import { ArrowUpRight, AlertTriangle, X, Check } from "lucide-react";
 import { Reveal, MaskLines } from "@/components/Reveal";
+import AttributionFields from "@/components/AttributionFields";
 import { brand } from "@/lib/data";
+import { submitEnquiry } from "@/lib/enquiries";
 import SEO, { breadcrumbSchema } from "@/components/SEO";
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 const painPoints = [
   "Project ran 4 months over schedule",
@@ -87,8 +86,9 @@ export default function BurntByBuilders() {
     }
     setBusy(true);
     try {
-      await axios.post(`${API}/enquiries`, {
+      await submitEnquiry({
         ...form,
+        form_name: "burnt-by-builders",
         email: form.email || "no-email@apollobuilders.com.au",
         project_type: form.project_type || "Consultation",
         message: `[Burnt-By-Builders Landing]\n${form.message || "Wants a fixed-price quote."}`,
@@ -96,8 +96,7 @@ export default function BurntByBuilders() {
       });
       navigate("/thanks");
     } catch (err) {
-      const msg = err?.response?.data?.detail?.[0]?.msg || err?.response?.data?.detail || "Something went wrong. Please try again.";
-      toast.error(String(msg));
+      toast.error(err.userMessage || "Something went wrong. Please try again.");
     } finally { setBusy(false); }
   };
 
@@ -187,6 +186,7 @@ export default function BurntByBuilders() {
                   No obligation. Same-week quote with zero hidden costs.
                 </p>
                 <form onSubmit={submit} className="mt-8 space-y-4" data-testid="bbb-form" noValidate>
+                  <AttributionFields />
                   <div aria-hidden="true" style={{ position: "absolute", left: "-9999px" }}>
                     <input tabIndex={-1} autoComplete="off" name="website" value={form.website} onChange={onChange} />
                   </div>

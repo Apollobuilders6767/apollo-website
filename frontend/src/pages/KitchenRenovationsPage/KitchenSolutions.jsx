@@ -6,6 +6,7 @@ import {
   ImageIcon,
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import OptimizedImage from "@/components/OptimizedImage";
 
 /* -----------------------------------------
    AI kitchen images
@@ -89,7 +90,7 @@ function KitchenCardImage({ src, alt, fallbackSrc }) {
   return (
     <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#F0E7D9]">
       {imageSrc ? (
-        <img
+        <OptimizedImage
           src={imageSrc}
           alt={alt || ""}
           loading="lazy"

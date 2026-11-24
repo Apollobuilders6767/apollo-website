@@ -29,6 +29,7 @@ import SEO, {
 } from "@/components/SEO";
 import { Reveal, MaskLines } from "@/components/Reveal";
 import { brand } from "@/lib/data";
+import OptimizedImage from "@/components/OptimizedImage";
 
 /**
  * SEO landing page — Builders Clayton VIC.
@@ -186,7 +187,7 @@ const recentProjects = [
       "A complete transformation of a 1970s home just minutes from Clayton — new kitchen, bathroom and open-plan living reconfiguration.",
   },
   {
-    slug: "endevour-hills-renovation",
+    slug: "endeavour-hills-renovation",
     name: "Endeavour Hills Renovation",
     type: "Renovation + Alfresco",
     image: "/images/apollo/endevour-hills-after-1-1024x686.jpg",
@@ -336,7 +337,7 @@ export default function BuildersClayton() {
         aria-labelledby="clayton-h1"
         className="relative isolate overflow-hidden bg-[color:var(--ink-black)]"
       >
-        <img
+        <OptimizedImage
           src={HERO_IMAGE}
           alt="Apollo Builders custom home build in Melbourne's south-east — representing our residential construction work available to Clayton homeowners"
           loading="eager"
@@ -687,7 +688,7 @@ export default function BuildersClayton() {
                 className="group block border border-[color:var(--hair)] bg-white hover:border-[color:var(--gold)] transition-colors"
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-[color:var(--cream)]">
-                  <img
+                  <OptimizedImage
                     src={p.image}
                     alt={p.alt}
                     loading="lazy"

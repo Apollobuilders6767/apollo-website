@@ -35,6 +35,16 @@
 /cookie-policy                 /cookie-policy/                301!
 /terms-of-use                  /terms-of-use/                 301!
 /builders-clayton              /builders-clayton/             301!
+/melbourne-home-builders       /melbourne-home-builders/      301!
+/home-renovations-melbourne    /home-renovations-melbourne/   301!
+/house-extensions-melbourne    /house-extensions-melbourne/   301!
+/custom-home-builders-melbourne /custom-home-builders-melbourne/ 301!
+/new-home-builders-melbourne   /new-home-builders-melbourne/  301!
+/knock-down-rebuild-melbourne  /knock-down-rebuild-melbourne/ 301!
+/design-build-melbourne        /design-build-melbourne/       301!
+/thanks                        /thanks/                       301!
+/our-projects/endevour-hills-renovation /our-projects/endeavour-hills-renovation/ 301
+/our-projects/endevour-hills-renovation/ /our-projects/endeavour-hills-renovation/ 301
 
 # Legacy redirects preserved (from WordPress-era backlinks).
 /about                         /about-us/                     301
@@ -62,7 +72,6 @@
 /consult/                      /index.html   200
 /burnt-by-builders/            /index.html   200
 /thank-you/                    /index.html   200
-/thanks                        /index.html   200
 
 /suburbs/*                     /index.html   200
 /resources/                    /index.html   200
@@ -73,6 +82,14 @@
 /terms-of-use/                 /index.html   200
 
 /builders-clayton/             /index.html   200
+/melbourne-home-builders/      /index.html   200
+/home-renovations-melbourne/   /index.html   200
+/house-extensions-melbourne/   /index.html   200
+/custom-home-builders-melbourne/ /index.html 200
+/new-home-builders-melbourne/  /index.html   200
+/knock-down-rebuild-melbourne/ /index.html   200
+/design-build-melbourne/       /index.html   200
+/thanks/                       /index.html   200
 
 # ══════════════════════════════════════════════════════════════════════
 # 3. Fall-through: real HTTP 404 for unknown paths

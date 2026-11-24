@@ -1,13 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-import axios from "axios";
 import { ArrowUpRight, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
 import { Reveal, MaskLines } from "@/components/Reveal";
+import AttributionFields from "@/components/AttributionFields";
 import { brand } from "@/lib/data";
+import { submitEnquiry } from "@/lib/enquiries";
 import SEO, { breadcrumbSchema } from "@/components/SEO";
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
 
 const totalSteps = 3;
 
@@ -68,10 +67,11 @@ export default function RenovationQuote() {
       return;
     }
     try {
-      await axios.post(`${API}/enquiries`, {
+      await submitEnquiry({
         name: form.name,
         phone: form.phone,
         email: form.email,
+        form_name: "renovation-quote",
         project_type: form.kind || "Renovation",
         address: form.suburb,
         message: `[Renovation Quote Calculator]\nProject: ${form.kind}\nProperty: ${form.property}\nTimeline: ${form.timeline}\nBudget: ${form.budget}\n\n${form.message}`,
@@ -80,8 +80,7 @@ export default function RenovationQuote() {
       });
       navigate("/thank-you");
     } catch (err) {
-      const msg = err?.response?.data?.detail?.[0]?.msg || err?.response?.data?.detail || "Something went wrong. Please try again.";
-      toast.error(String(msg));
+      toast.error(err.userMessage || "Something went wrong. Please try again.");
     }
   };
 
@@ -142,6 +141,7 @@ export default function RenovationQuote() {
         </Reveal>
 
         <form onSubmit={submit} noValidate className="mt-12" data-testid="renovation-quote-form">
+          <AttributionFields />
           {/* Honeypot */}
           <div aria-hidden="true" style={{ position: "absolute", left: "-9999px" }}>
             <input tabIndex={-1} autoComplete="off" name="website" value={form.website} onChange={(e) => set("website", e.target.value)} />

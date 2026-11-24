@@ -8,6 +8,7 @@ import SEO, {
 } from "@/components/SEO";
 
 import { Reveal, MaskLines } from "@/components/Reveal";
+import OptimizedImage from "@/components/OptimizedImage";
 
 export default function KnockDownRebuildMelbourne() {
   const canonical = "/knock-down-rebuild-melbourne/";
@@ -196,7 +197,7 @@ export default function KnockDownRebuildMelbourne() {
 
             <Reveal className="lg:col-span-5" delay={0.1}>
               <div className="overflow-hidden rounded-[2px]">
-                <img
+                <OptimizedImage
                   src="/images/apollo/new-home-builders-berwick.jpg"
                   alt="New home construction by Apollo Builders in Melbourne"
                   className="h-[420px] w-full object-cover md:h-[560px] lg:h-[640px]"

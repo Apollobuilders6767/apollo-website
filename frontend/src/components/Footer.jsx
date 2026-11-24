@@ -2,12 +2,11 @@ import { Link } from "react-router-dom";
 import { brand, suburbs, services } from "@/lib/data";
 
 import {
-  Instagram,
-  Facebook,
   Mail,
   Phone,
   ArrowUpRight,
 } from "lucide-react";
+import OptimizedImage from "@/components/OptimizedImage";
 
 const seoServiceLinks = [
   {
@@ -46,7 +45,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-14">
           {/* Brand */}
           <div className="md:col-span-5">
-            <img
+            <OptimizedImage
               src={brand.logo}
               alt="Apollo Builders"
               className="h-80 w-auto"
@@ -67,23 +66,7 @@ export default function Footer() {
               next project.
             </p>
 
-            <div className="mt-10 flex items-center gap-6">
-              <a
-                href="#"
-                aria-label="Instagram"
-                className="hover:opacity-70 transition-opacity"
-              >
-                <Instagram strokeWidth={1.25} />
-              </a>
-
-              <a
-                href="#"
-                aria-label="Facebook"
-                className="hover:opacity-70 transition-opacity"
-              >
-                <Facebook strokeWidth={1.25} />
-              </a>
-            </div>
+            {/* Instagram and Facebook are hidden until real profile URLs are supplied. */}
           </div>
 
           {/* Practice / Services */}

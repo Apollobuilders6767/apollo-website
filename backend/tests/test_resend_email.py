@@ -37,6 +37,7 @@ NAMESPACE = {
     "RESEND_API_KEY": "re_mock_test_key",
     "RESEND_FROM_EMAIL": "Apollo Builders <notifications@apollobuilders.com.au>",
     "ENQUIRY_RECIPIENT_EMAIL": "info@apollobuilders.com.au",
+    "EMAIL_FROM_NAME": "Apollo Builders Website",
     "_build_email_html": lambda enquiry: "<p>Test enquiry</p>",
     "httpx": httpx,
     "logging": __import__("logging"),
@@ -131,3 +132,23 @@ def test_resend_request_payload():
     assert kwargs["headers"]["Authorization"] == (
         "Bearer re_mock_test_key"
     )
+
+
+def test_default_recipient_and_click_ids_are_in_the_api():
+    """Enquiry mail goes to info@ unless ENQUIRY_RECIPIENT_EMAIL overrides it,
+    and click ids are accepted on the payload that is stored and emailed."""
+    assert "info@apollobuilders.com.au" in SOURCE
+    assert "ENQUIRY_RECIPIENT_EMAIL" in SOURCE
+    for key in (
+        "gclid",
+        "gbraid",
+        "wbraid",
+        "utm_source",
+        "utm_medium",
+        "utm_campaign",
+        "utm_term",
+        "utm_content",
+        "form_name",
+    ):
+        assert f"{key}:" in SOURCE or f'"{key}"' in SOURCE
+    assert "Resend email dispatch failed" in SOURCE

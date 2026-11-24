@@ -19,7 +19,7 @@ export const trustPoints = [
 ];
 
 // Real Apollo Builders projects — photos + wording from apollobuilders.com.au/our-projects/*
-// Note: Live site canonical URLs use "endevour-hills-renovation" (typo preserved for URL parity)
+// The old slug "endevour-hills-renovation" 301s to this spelling.
 export const projects = [
   {
     slug: "drouin-new-build",
@@ -126,8 +126,8 @@ export const projects = [
     ],
   },
   {
-    slug: "endevour-hills-renovation",
-    name: "Endevour Hills Renovation",
+    slug: "endeavour-hills-renovation",
+    name: "Endeavour Hills Renovation",
     suburb: "Endeavour Hills",
     type: "Full Renovation + Alfresco",
     image: "/images/apollo/endevour-hills-after-1-1024x686.jpg",

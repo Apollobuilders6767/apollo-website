@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal, MaskLines } from "@/components/Reveal";
+import OptimizedImage from "@/components/OptimizedImage";
 
 // Replace this with your House Extensions hero image.
 const HERO_IMAGE =
@@ -15,7 +16,7 @@ export default function HouseExtensionsHero() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-y-0 right-0 hidden w-[60%] lg:block"
       >
-        <img
+        <OptimizedImage
           src={HERO_IMAGE}
           alt=""
           className="h-full w-full object-cover object-center"
@@ -115,7 +116,7 @@ export default function HouseExtensionsHero() {
 
       {/* Mobile / tablet image */}
       <div className="relative h-[280px] w-full overflow-hidden sm:h-[380px] lg:hidden">
-        <img
+        <OptimizedImage
           src={HERO_IMAGE}
           alt="House extension and renovation project in Melbourne by Apollo Builders"
           className="h-full w-full object-cover object-center"

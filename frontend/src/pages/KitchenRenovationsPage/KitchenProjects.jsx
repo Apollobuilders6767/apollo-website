@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import OptimizedImage from "@/components/OptimizedImage";
 
 export default function KitchenProjects({ related = [] }) {
   if (!related?.length) return null;
@@ -82,7 +83,7 @@ export default function KitchenProjects({ related = [] }) {
 
                 {/* Project image */}
                 <div className="relative aspect-[4/3] overflow-hidden bg-[#EDE7DD]">
-                  <img
+                  <OptimizedImage
                     src={project.image}
                     alt={project.imageAlt}
                     loading="lazy"

@@ -204,7 +204,7 @@ export const servicePages = {
     ],
     whyChooseOutro:
       "Your home is one of your biggest investments and we treat every renovation with the care and attention it deserves.",
-    relatedProjects: ["bentleigh-east-renovation", "endevour-hills-renovation", "altona-meadows-renovation"],
+    relatedProjects: ["bentleigh-east-renovation", "endeavour-hills-renovation", "altona-meadows-renovation"],
     finalCta: {
       heading: "Start Your Home Renovation Today",
       body: "Whether you're planning a full home renovation, extension or home improvement project, Apollo Builders can help bring your ideas to life. Contact us today to arrange a consultation and receive a personalised quote for your renovation project.",
@@ -227,7 +227,7 @@ export const servicePages = {
       ],
     },
     collage: [
-      { src: "/images/apollo/endevour-hills-after-4.jpg", alt: "Kitchen renovation Endevour Hills by Apollo Builders" },
+      { src: "/images/apollo/endevour-hills-after-4.jpg", alt: "Kitchen renovation Endeavour Hills by Apollo Builders" },
       { src: "/images/apollo/Berwick-New-build-1-2.jpg", alt: "Kitchen renovation Berwick" },
       { src: "/images/apollo/bentleigh-east-new-2-1.jpg", alt: "Kitchen renovation Bentleigh East" },
     ],
@@ -312,7 +312,7 @@ export const servicePages = {
     ],
     whyChooseOutro:
       "Your kitchen is a major investment. We treat it with the care and attention it deserves.",
-    relatedProjects: ["bentleigh-east-renovation", "endevour-hills-renovation", "berwick-new-build"],
+    relatedProjects: ["bentleigh-east-renovation", "endeavour-hills-renovation", "berwick-new-build"],
     finalCta: {
       heading: "Create A Kitchen You'll Love Every Day",
       body: "A well-designed kitchen improves how your home looks, feels, and functions. With Apollo Builders, your Kitchen Renovations are managed by experienced professionals from start to finish. If you're planning a kitchen renovation in Melbourne, contact Apollo Builders today for expert advice and a personalised quote.",
@@ -342,7 +342,7 @@ export const servicePages = {
     },
     collage: [
       { src: "/images/apollo/Clyde-new-build-3-1.jpg", alt: "Bathroom renovations Clyde by Apollo Builders" },
-      { src: "/images/apollo/endevour-hills-after-5.jpg", alt: "Bathroom renovations Endevour Hills" },
+      { src: "/images/apollo/endevour-hills-after-5.jpg", alt: "Bathroom renovations Endeavour Hills" },
       { src: "/images/apollo/bentleigh-east-new-4-1.jpg", alt: "Bathroom renovations Bentleigh East" },
     ],
     inclusionsHeading: "Complete Bathroom Renovations From Conception to Completion",
@@ -425,7 +425,7 @@ export const servicePages = {
     ],
     whyChooseOutro:
       "Every renovation is approached with the same level of care, professionalism and attention to detail, whether it's a simple bathroom update or a complete transformation.",
-    relatedProjects: ["bentleigh-east-renovation", "endevour-hills-renovation", "altona-meadows-renovation"],
+    relatedProjects: ["bentleigh-east-renovation", "endeavour-hills-renovation", "altona-meadows-renovation"],
     serviceArea: {
       heading: "Bathroom Renovations Across Melbourne's South-East",
       body: "Apollo Builders provides bathroom renovation services throughout Melbourne's South-East, including Bentleigh, Brighton, Cheltenham, Hampton, Mentone, Mordialloc, Moorabbin and surrounding suburbs. Our local experience helps ensure a smooth renovation process and quality results tailored to your home.",

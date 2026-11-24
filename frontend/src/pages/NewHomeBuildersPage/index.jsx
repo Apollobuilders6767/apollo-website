@@ -103,6 +103,7 @@ export default function NewHomeBuildersMelbourne() {
         title="New Home Builders Melbourne | Apollo Builders"
         description="Build your new home in Melbourne with Apollo Builders. Explore modern family homes, two-storey builds and new residential construction across Melbourne's south-east."
         path={canonical}
+        canonicalPath="/new-home-builds/"
         jsonLd={jsonLd}
       />
 

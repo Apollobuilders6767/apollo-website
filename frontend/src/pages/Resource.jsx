@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Reveal, MaskLines } from "@/components/Reveal";
 import SEO, { breadcrumbSchema } from "@/components/SEO";
 import { resourceArticles, suburbData } from "@/lib/seoContent";
+import OptimizedImage from "@/components/OptimizedImage";
 
 export function ResourceIndex() {
   const articles = Object.values(resourceArticles);
@@ -34,7 +35,7 @@ export function ResourceIndex() {
             <li key={a.slug} className="border-t border-[color:var(--hair)] pt-8">
               <Link to={`/resources/${a.slug}/`} className="group block">
                 <div className="frame aspect-[16/10]">
-                  <img src={a.image} alt={a.alt} loading="lazy" />
+                  <OptimizedImage src={a.image} alt={a.alt} loading="lazy" />
                 </div>
                 <h2 className="font-display text-[24px] md:text-[30px] leading-[1.15] tracking-[-0.01em] text-[color:var(--ink-black)] mt-6">
                   {a.title}
@@ -90,7 +91,7 @@ export default function Resource() {
 
       <section className="mx-auto max-w-[1080px] px-6 md:px-10 pb-16">
         <div className="frame aspect-[16/9]">
-          <img src={a.image} alt={a.alt} />
+          <OptimizedImage src={a.image} alt={a.alt} />
         </div>
       </section>
 

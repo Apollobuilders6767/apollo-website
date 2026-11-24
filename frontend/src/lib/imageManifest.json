@@ -1,0 +1,464 @@
+{
+  "/images/kitchen-charcoal-luxury.png": {
+    "width": 1600,
+    "height": 900,
+    "fallback": "/images/kitchen-charcoal-luxury.jpg",
+    "webp": "/images/kitchen-charcoal-luxury.webp",
+    "webpSrcSet": "/images/kitchen-charcoal-luxury-640.webp 640w, /images/kitchen-charcoal-luxury-960.webp 960w, /images/kitchen-charcoal-luxury-1280.webp 1280w, /images/kitchen-charcoal-luxury.webp 1600w"
+  },
+  "/images/kitchen-walnut-gold.png": {
+    "width": 1600,
+    "height": 900,
+    "fallback": "/images/kitchen-walnut-gold.jpg",
+    "webp": "/images/kitchen-walnut-gold.webp",
+    "webpSrcSet": "/images/kitchen-walnut-gold-640.webp 640w, /images/kitchen-walnut-gold-960.webp 960w, /images/kitchen-walnut-gold-1280.webp 1280w, /images/kitchen-walnut-gold.webp 1600w"
+  },
+  "/images/kitchen-bright-modern.png": {
+    "width": 1600,
+    "height": 900,
+    "fallback": "/images/kitchen-bright-modern.jpg",
+    "webp": "/images/kitchen-bright-modern.webp",
+    "webpSrcSet": "/images/kitchen-bright-modern-640.webp 640w, /images/kitchen-bright-modern-960.webp 960w, /images/kitchen-bright-modern-1280.webp 1280w, /images/kitchen-bright-modern.webp 1600w"
+  },
+  "/images/kitchen-modern-marble.png": {
+    "width": 1600,
+    "height": 900,
+    "fallback": "/images/kitchen-modern-marble.jpg",
+    "webp": "/images/kitchen-modern-marble.webp",
+    "webpSrcSet": "/images/kitchen-modern-marble-640.webp 640w, /images/kitchen-modern-marble-960.webp 960w, /images/kitchen-modern-marble-1280.webp 1280w, /images/kitchen-modern-marble.webp 1600w"
+  },
+  "/images/new-home-solutions/two-storey-homes.png": {
+    "width": 1600,
+    "height": 900,
+    "fallback": "/images/new-home-solutions/two-storey-homes.jpg",
+    "webp": "/images/new-home-solutions/two-storey-homes.webp",
+    "webpSrcSet": "/images/new-home-solutions/two-storey-homes-640.webp 640w, /images/new-home-solutions/two-storey-homes-960.webp 960w, /images/new-home-solutions/two-storey-homes-1280.webp 1280w, /images/new-home-solutions/two-storey-homes.webp 1600w"
+  },
+  "/images/new-home-solutions/modern-family-homes.png": {
+    "width": 1600,
+    "height": 900,
+    "fallback": "/images/new-home-solutions/modern-family-homes.jpg",
+    "webp": "/images/new-home-solutions/modern-family-homes.webp",
+    "webpSrcSet": "/images/new-home-solutions/modern-family-homes-640.webp 640w, /images/new-home-solutions/modern-family-homes-960.webp 960w, /images/new-home-solutions/modern-family-homes-1280.webp 1280w, /images/new-home-solutions/modern-family-homes.webp 1600w"
+  },
+  "/images/new-home-solutions/choosing-a-builder.png": {
+    "width": 1600,
+    "height": 900,
+    "fallback": "/images/new-home-solutions/choosing-a-builder.jpg",
+    "webp": "/images/new-home-solutions/choosing-a-builder.webp",
+    "webpSrcSet": "/images/new-home-solutions/choosing-a-builder-640.webp 640w, /images/new-home-solutions/choosing-a-builder-960.webp 960w, /images/new-home-solutions/choosing-a-builder-1280.webp 1280w, /images/new-home-solutions/choosing-a-builder.webp 1600w"
+  },
+  "/images/renovation-solutions/kitchen-renovations.png": {
+    "width": 1536,
+    "height": 1024,
+    "fallback": "/images/renovation-solutions/kitchen-renovations.jpg",
+    "webp": "/images/renovation-solutions/kitchen-renovations.webp",
+    "webpSrcSet": "/images/renovation-solutions/kitchen-renovations-640.webp 640w, /images/renovation-solutions/kitchen-renovations-960.webp 960w, /images/renovation-solutions/kitchen-renovations-1280.webp 1280w, /images/renovation-solutions/kitchen-renovations.webp 1536w"
+  },
+  "/images/renovation-solutions/indoor-outdoor-living.png": {
+    "width": 1536,
+    "height": 1024,
+    "fallback": "/images/renovation-solutions/indoor-outdoor-living.jpg",
+    "webp": "/images/renovation-solutions/indoor-outdoor-living.webp",
+    "webpSrcSet": "/images/renovation-solutions/indoor-outdoor-living-640.webp 640w, /images/renovation-solutions/indoor-outdoor-living-960.webp 960w, /images/renovation-solutions/indoor-outdoor-living-1280.webp 1280w, /images/renovation-solutions/indoor-outdoor-living.webp 1536w"
+  },
+  "/images/renovation-solutions/renovate-instead-of-moving.png": {
+    "width": 1536,
+    "height": 1024,
+    "fallback": "/images/renovation-solutions/renovate-instead-of-moving.jpg",
+    "webp": "/images/renovation-solutions/renovate-instead-of-moving.webp",
+    "webpSrcSet": "/images/renovation-solutions/renovate-instead-of-moving-640.webp 640w, /images/renovation-solutions/renovate-instead-of-moving-960.webp 960w, /images/renovation-solutions/renovate-instead-of-moving-1280.webp 1280w, /images/renovation-solutions/renovate-instead-of-moving.webp 1536w"
+  },
+  "/images/renovation-solutions/open-plan-living.png": {
+    "width": 1536,
+    "height": 1024,
+    "fallback": "/images/renovation-solutions/open-plan-living.jpg",
+    "webp": "/images/renovation-solutions/open-plan-living.webp",
+    "webpSrcSet": "/images/renovation-solutions/open-plan-living-640.webp 640w, /images/renovation-solutions/open-plan-living-960.webp 960w, /images/renovation-solutions/open-plan-living-1280.webp 1280w, /images/renovation-solutions/open-plan-living.webp 1536w"
+  },
+  "/images/renovation-solutions/bathroom-renovations.png": {
+    "width": 1536,
+    "height": 1024,
+    "fallback": "/images/renovation-solutions/bathroom-renovations.jpg",
+    "webp": "/images/renovation-solutions/bathroom-renovations.webp",
+    "webpSrcSet": "/images/renovation-solutions/bathroom-renovations-640.webp 640w, /images/renovation-solutions/bathroom-renovations-960.webp 960w, /images/renovation-solutions/bathroom-renovations-1280.webp 1280w, /images/renovation-solutions/bathroom-renovations.webp 1536w"
+  },
+  "/images/renovation-solutions/lifestyle-renovations.png": {
+    "width": 1536,
+    "height": 1024,
+    "fallback": "/images/renovation-solutions/lifestyle-renovations.jpg",
+    "webp": "/images/renovation-solutions/lifestyle-renovations.webp",
+    "webpSrcSet": "/images/renovation-solutions/lifestyle-renovations-640.webp 640w, /images/renovation-solutions/lifestyle-renovations-960.webp 960w, /images/renovation-solutions/lifestyle-renovations-1280.webp 1280w, /images/renovation-solutions/lifestyle-renovations.webp 1536w"
+  },
+  "/images/extension-solutions/combined-projects.png": {
+    "width": 1600,
+    "height": 900,
+    "fallback": "/images/extension-solutions/combined-projects.jpg",
+    "webp": "/images/extension-solutions/combined-projects.webp",
+    "webpSrcSet": "/images/extension-solutions/combined-projects-640.webp 640w, /images/extension-solutions/combined-projects-960.webp 960w, /images/extension-solutions/combined-projects-1280.webp 1280w, /images/extension-solutions/combined-projects.webp 1600w"
+  },
+  "/images/extension-solutions/indoor-outdoor.png": {
+    "width": 1600,
+    "height": 900,
+    "fallback": "/images/extension-solutions/indoor-outdoor.jpg",
+    "webp": "/images/extension-solutions/indoor-outdoor.webp",
+    "webpSrcSet": "/images/extension-solutions/indoor-outdoor-640.webp 640w, /images/extension-solutions/indoor-outdoor-960.webp 960w, /images/extension-solutions/indoor-outdoor-1280.webp 1280w, /images/extension-solutions/indoor-outdoor.webp 1600w"
+  },
+  "/images/extension-solutions/second-storey.png": {
+    "width": 1600,
+    "height": 900,
+    "fallback": "/images/extension-solutions/second-storey.jpg",
+    "webp": "/images/extension-solutions/second-storey.webp",
+    "webpSrcSet": "/images/extension-solutions/second-storey-640.webp 640w, /images/extension-solutions/second-storey-960.webp 960w, /images/extension-solutions/second-storey-1280.webp 1280w, /images/extension-solutions/second-storey.webp 1600w"
+  },
+  "/images/extension-solutions/old-meets-new.png": {
+    "width": 1600,
+    "height": 900,
+    "fallback": "/images/extension-solutions/old-meets-new.jpg",
+    "webp": "/images/extension-solutions/old-meets-new.webp",
+    "webpSrcSet": "/images/extension-solutions/old-meets-new-640.webp 640w, /images/extension-solutions/old-meets-new-960.webp 960w, /images/extension-solutions/old-meets-new-1280.webp 1280w, /images/extension-solutions/old-meets-new.webp 1600w"
+  },
+  "/images/extension-solutions/rear-extensions.png": {
+    "width": 1600,
+    "height": 901,
+    "fallback": "/images/extension-solutions/rear-extensions.jpg",
+    "webp": "/images/extension-solutions/rear-extensions.webp",
+    "webpSrcSet": "/images/extension-solutions/rear-extensions-640.webp 640w, /images/extension-solutions/rear-extensions-960.webp 960w, /images/extension-solutions/rear-extensions-1280.webp 1280w, /images/extension-solutions/rear-extensions.webp 1600w"
+  },
+  "/images/apollo/Berwick-New-build-1-2.jpg": {
+    "width": 1176,
+    "height": 784,
+    "fallback": "/images/apollo/Berwick-New-build-1-2.jpg",
+    "webp": "/images/apollo/Berwick-New-build-1-2.webp",
+    "webpSrcSet": "/images/apollo/Berwick-New-build-1-2-640.webp 640w, /images/apollo/Berwick-New-build-1-2-960.webp 960w, /images/apollo/Berwick-New-build-1-2.webp 1176w"
+  },
+  "/images/apollo/melbourne-home-renovation-bentleigh-east.jpg": {
+    "width": 1024,
+    "height": 627,
+    "fallback": "/images/apollo/melbourne-home-renovation-bentleigh-east.jpg",
+    "webp": "/images/apollo/melbourne-home-renovation-bentleigh-east.webp",
+    "webpSrcSet": "/images/apollo/melbourne-home-renovation-bentleigh-east-640.webp 640w, /images/apollo/melbourne-home-renovation-bentleigh-east-960.webp 960w, /images/apollo/melbourne-home-renovation-bentleigh-east.webp 1024w"
+  },
+  "/images/apollo/new-builds-homepage.jpeg": {
+    "width": 1280,
+    "height": 793,
+    "fallback": "/images/apollo/new-builds-homepage.jpeg",
+    "webp": "/images/apollo/new-builds-homepage.webp",
+    "webpSrcSet": "/images/apollo/new-builds-homepage-640.webp 640w, /images/apollo/new-builds-homepage-960.webp 960w, /images/apollo/new-builds-homepage.webp 1280w"
+  },
+  "/images/apollo/kitchen-renovation-hero.png": {
+    "width": 1600,
+    "height": 900,
+    "fallback": "/images/apollo/kitchen-renovation-hero.jpg",
+    "webp": "/images/apollo/kitchen-renovation-hero.webp",
+    "webpSrcSet": "/images/apollo/kitchen-renovation-hero-640.webp 640w, /images/apollo/kitchen-renovation-hero-960.webp 960w, /images/apollo/kitchen-renovation-hero-1280.webp 1280w, /images/apollo/kitchen-renovation-hero.webp 1600w"
+  },
+  "/images/apollo/Berwick-New-Build-e1762574957206.jpg": {
+    "width": 1013,
+    "height": 667,
+    "fallback": "/images/apollo/Berwick-New-Build-e1762574957206.jpg",
+    "webp": "/images/apollo/Berwick-New-Build-e1762574957206.webp",
+    "webpSrcSet": "/images/apollo/Berwick-New-Build-e1762574957206-640.webp 640w, /images/apollo/Berwick-New-Build-e1762574957206-960.webp 960w, /images/apollo/Berwick-New-Build-e1762574957206.webp 1013w"
+  },
+  "/images/apollo/melbourne-custom-home-builders-drouin.jpg": {
+    "width": 1168,
+    "height": 784,
+    "fallback": "/images/apollo/melbourne-custom-home-builders-drouin.jpg",
+    "webp": "/images/apollo/melbourne-custom-home-builders-drouin.webp",
+    "webpSrcSet": "/images/apollo/melbourne-custom-home-builders-drouin-640.webp 640w, /images/apollo/melbourne-custom-home-builders-drouin-960.webp 960w, /images/apollo/melbourne-custom-home-builders-drouin.webp 1168w"
+  },
+  "/images/apollo/Drouin-New-Build-10.jpg": {
+    "width": 1171,
+    "height": 784,
+    "fallback": "/images/apollo/Drouin-New-Build-10.jpg",
+    "webp": "/images/apollo/Drouin-New-Build-10.webp",
+    "webpSrcSet": "/images/apollo/Drouin-New-Build-10-640.webp 640w, /images/apollo/Drouin-New-Build-10-960.webp 960w, /images/apollo/Drouin-New-Build-10.webp 1171w"
+  },
+  "/images/apollo/premium-renovation-hero (2).png": {
+    "width": 1600,
+    "height": 691,
+    "fallback": "/images/apollo/premium-renovation-hero (2).jpg",
+    "webp": "/images/apollo/premium-renovation-hero%20%282%29.webp",
+    "webpSrcSet": "/images/apollo/premium-renovation-hero%20%282%29-640.webp 640w, /images/apollo/premium-renovation-hero%20%282%29-960.webp 960w, /images/apollo/premium-renovation-hero%20%282%29-1280.webp 1280w, /images/apollo/premium-renovation-hero%20%282%29.webp 1600w"
+  },
+  "/images/apollo/endevour-hills-after-5.jpg": {
+    "width": 1174,
+    "height": 784,
+    "fallback": "/images/apollo/endevour-hills-after-5.jpg",
+    "webp": "/images/apollo/endevour-hills-after-5.webp",
+    "webpSrcSet": "/images/apollo/endevour-hills-after-5-640.webp 640w, /images/apollo/endevour-hills-after-5-960.webp 960w, /images/apollo/endevour-hills-after-5.webp 1174w"
+  },
+  "/images/apollo/drouin-new-build-9-1.jpg": {
+    "width": 929,
+    "height": 784,
+    "fallback": "/images/apollo/drouin-new-build-9-1.jpg",
+    "webp": "/images/apollo/drouin-new-build-9-1.webp",
+    "webpSrcSet": "/images/apollo/drouin-new-build-9-1-640.webp 640w, /images/apollo/drouin-new-build-9-1.webp 929w"
+  },
+  "/images/apollo/Home.jpeg": {
+    "width": 1171,
+    "height": 784,
+    "fallback": "/images/apollo/Home.jpeg",
+    "webp": "/images/apollo/Home.webp",
+    "webpSrcSet": "/images/apollo/Home-640.webp 640w, /images/apollo/Home-960.webp 960w, /images/apollo/Home.webp 1171w"
+  },
+  "/images/apollo/Bentleigh-East-5.png": {
+    "width": 1080,
+    "height": 1080,
+    "fallback": "/images/apollo/Bentleigh-East-5.jpg",
+    "webp": "/images/apollo/Bentleigh-East-5.webp",
+    "webpSrcSet": "/images/apollo/Bentleigh-East-5-640.webp 640w, /images/apollo/Bentleigh-East-5-960.webp 960w, /images/apollo/Bentleigh-East-5.webp 1080w"
+  },
+  "/images/apollo/apollo-builders-logo.png": {
+    "width": 640,
+    "height": 640,
+    "fallback": "/images/apollo/apollo-builders-logo.png",
+    "webp": "/images/apollo/apollo-builders-logo.webp",
+    "webpSrcSet": "/images/apollo/apollo-builders-logo.webp 640w"
+  },
+  "/images/apollo/new-home-builders-berwick.jpg": {
+    "width": 1013,
+    "height": 670,
+    "fallback": "/images/apollo/new-home-builders-berwick.jpg",
+    "webp": "/images/apollo/new-home-builders-berwick.webp",
+    "webpSrcSet": "/images/apollo/new-home-builders-berwick-640.webp 640w, /images/apollo/new-home-builders-berwick-960.webp 960w, /images/apollo/new-home-builders-berwick.webp 1013w"
+  },
+  "/images/apollo/Berwick-New-Build-5-e1762576152191.jpg": {
+    "width": 1013,
+    "height": 670,
+    "fallback": "/images/apollo/Berwick-New-Build-5-e1762576152191.jpg",
+    "webp": "/images/apollo/Berwick-New-Build-5-e1762576152191.webp",
+    "webpSrcSet": "/images/apollo/Berwick-New-Build-5-e1762576152191-640.webp 640w, /images/apollo/Berwick-New-Build-5-e1762576152191-960.webp 960w, /images/apollo/Berwick-New-Build-5-e1762576152191.webp 1013w"
+  },
+  "/images/apollo/drouin-new-build-4-1.jpg": {
+    "width": 1173,
+    "height": 784,
+    "fallback": "/images/apollo/drouin-new-build-4-1.jpg",
+    "webp": "/images/apollo/drouin-new-build-4-1.webp",
+    "webpSrcSet": "/images/apollo/drouin-new-build-4-1-640.webp 640w, /images/apollo/drouin-new-build-4-1-960.webp 960w, /images/apollo/drouin-new-build-4-1.webp 1173w"
+  },
+  "/images/apollo/bentleigh-east-new-2-1.jpg": {
+    "width": 1177,
+    "height": 727,
+    "fallback": "/images/apollo/bentleigh-east-new-2-1.jpg",
+    "webp": "/images/apollo/bentleigh-east-new-2-1.webp",
+    "webpSrcSet": "/images/apollo/bentleigh-east-new-2-1-640.webp 640w, /images/apollo/bentleigh-east-new-2-1-960.webp 960w, /images/apollo/bentleigh-east-new-2-1.webp 1177w"
+  },
+  "/images/apollo/Drouin-New-Build.jpg": {
+    "width": 1171,
+    "height": 784,
+    "fallback": "/images/apollo/Drouin-New-Build.jpg",
+    "webp": "/images/apollo/Drouin-New-Build.webp",
+    "webpSrcSet": "/images/apollo/Drouin-New-Build-640.webp 640w, /images/apollo/Drouin-New-Build-960.webp 960w, /images/apollo/Drouin-New-Build.webp 1171w"
+  },
+  "/images/apollo/house.jpeg": {
+    "width": 929,
+    "height": 784,
+    "fallback": "/images/apollo/house.jpeg",
+    "webp": "/images/apollo/house.webp",
+    "webpSrcSet": "/images/apollo/house-640.webp 640w, /images/apollo/house.webp 929w"
+  },
+  "/images/apollo/drouin-new-build-7.jpg": {
+    "width": 1168,
+    "height": 784,
+    "fallback": "/images/apollo/drouin-new-build-7.jpg",
+    "webp": "/images/apollo/drouin-new-build-7.webp",
+    "webpSrcSet": "/images/apollo/drouin-new-build-7-640.webp 640w, /images/apollo/drouin-new-build-7-960.webp 960w, /images/apollo/drouin-new-build-7.webp 1168w"
+  },
+  "/images/apollo/Clyde-new-build-1.jpg": {
+    "width": 1175,
+    "height": 784,
+    "fallback": "/images/apollo/Clyde-new-build-1.jpg",
+    "webp": "/images/apollo/Clyde-new-build-1.webp",
+    "webpSrcSet": "/images/apollo/Clyde-new-build-1-640.webp 640w, /images/apollo/Clyde-new-build-1-960.webp 960w, /images/apollo/Clyde-new-build-1.webp 1175w"
+  },
+  "/images/apollo/Altona-Meadows-after-1-1-e1762576302550.jpg": {
+    "width": 1170,
+    "height": 720,
+    "fallback": "/images/apollo/Altona-Meadows-after-1-1-e1762576302550.jpg",
+    "webp": "/images/apollo/Altona-Meadows-after-1-1-e1762576302550.webp",
+    "webpSrcSet": "/images/apollo/Altona-Meadows-after-1-1-e1762576302550-640.webp 640w, /images/apollo/Altona-Meadows-after-1-1-e1762576302550-960.webp 960w, /images/apollo/Altona-Meadows-after-1-1-e1762576302550.webp 1170w"
+  },
+  "/images/apollo/bentleigh-east-new-1-1-1024x627.jpg": {
+    "width": 1024,
+    "height": 627,
+    "fallback": "/images/apollo/bentleigh-east-new-1-1-1024x627.jpg",
+    "webp": "/images/apollo/bentleigh-east-new-1-1-1024x627.webp",
+    "webpSrcSet": "/images/apollo/bentleigh-east-new-1-1-1024x627-640.webp 640w, /images/apollo/bentleigh-east-new-1-1-1024x627-960.webp 960w, /images/apollo/bentleigh-east-new-1-1-1024x627.webp 1024w"
+  },
+  "/images/apollo/drouin-new-build-3.jpg": {
+    "width": 1168,
+    "height": 784,
+    "fallback": "/images/apollo/drouin-new-build-3.jpg",
+    "webp": "/images/apollo/drouin-new-build-3.webp",
+    "webpSrcSet": "/images/apollo/drouin-new-build-3-640.webp 640w, /images/apollo/drouin-new-build-3-960.webp 960w, /images/apollo/drouin-new-build-3.webp 1168w"
+  },
+  "/images/apollo/drouin-new-build-9.jpg": {
+    "width": 929,
+    "height": 784,
+    "fallback": "/images/apollo/drouin-new-build-9.jpg",
+    "webp": "/images/apollo/drouin-new-build-9.webp",
+    "webpSrcSet": "/images/apollo/drouin-new-build-9-640.webp 640w, /images/apollo/drouin-new-build-9.webp 929w"
+  },
+  "/images/apollo/photo_2025-11-21_12-38-05.webp": {
+    "width": 896,
+    "height": 597,
+    "fallback": "/images/apollo/photo_2025-11-21_12-38-05.jpg",
+    "webp": "/images/apollo/photo_2025-11-21_12-38-05.webp",
+    "webpSrcSet": "/images/apollo/photo_2025-11-21_12-38-05-640.webp 640w, /images/apollo/photo_2025-11-21_12-38-05.webp 896w"
+  },
+  "/images/apollo/Clyde-new-build-2-1-e1762576012818.jpg": {
+    "width": 957,
+    "height": 720,
+    "fallback": "/images/apollo/Clyde-new-build-2-1-e1762576012818.jpg",
+    "webp": "/images/apollo/Clyde-new-build-2-1-e1762576012818.webp",
+    "webpSrcSet": "/images/apollo/Clyde-new-build-2-1-e1762576012818-640.webp 640w, /images/apollo/Clyde-new-build-2-1-e1762576012818.webp 957w"
+  },
+  "/images/apollo/contemporary-villa-with-pool-garden-sleek-design-scaled.jpg": {
+    "width": 1600,
+    "height": 1067,
+    "fallback": "/images/apollo/contemporary-villa-with-pool-garden-sleek-design-scaled.jpg",
+    "webp": "/images/apollo/contemporary-villa-with-pool-garden-sleek-design-scaled.webp",
+    "webpSrcSet": "/images/apollo/contemporary-villa-with-pool-garden-sleek-design-scaled-640.webp 640w, /images/apollo/contemporary-villa-with-pool-garden-sleek-design-scaled-960.webp 960w, /images/apollo/contemporary-villa-with-pool-garden-sleek-design-scaled-1280.webp 1280w, /images/apollo/contemporary-villa-with-pool-garden-sleek-design-scaled.webp 1600w"
+  },
+  "/images/apollo/Clyde-new-build-1-1024x683.jpg": {
+    "width": 1024,
+    "height": 683,
+    "fallback": "/images/apollo/Clyde-new-build-1-1024x683.jpg",
+    "webp": "/images/apollo/Clyde-new-build-1-1024x683.webp",
+    "webpSrcSet": "/images/apollo/Clyde-new-build-1-1024x683-640.webp 640w, /images/apollo/Clyde-new-build-1-1024x683-960.webp 960w, /images/apollo/Clyde-new-build-1-1024x683.webp 1024w"
+  },
+  "/images/apollo/new-home-builders-hero.png": {
+    "width": 1600,
+    "height": 900,
+    "fallback": "/images/apollo/new-home-builders-hero.jpg",
+    "webp": "/images/apollo/new-home-builders-hero.webp",
+    "webpSrcSet": "/images/apollo/new-home-builders-hero-640.webp 640w, /images/apollo/new-home-builders-hero-960.webp 960w, /images/apollo/new-home-builders-hero-1280.webp 1280w, /images/apollo/new-home-builders-hero.webp 1600w"
+  },
+  "/images/apollo/photo_2025-12-03_10-38-14-e1764907039294.png": {
+    "width": 873,
+    "height": 860,
+    "fallback": "/images/apollo/photo_2025-12-03_10-38-14-e1764907039294.png",
+    "webp": "/images/apollo/photo_2025-12-03_10-38-14-e1764907039294.webp",
+    "webpSrcSet": "/images/apollo/photo_2025-12-03_10-38-14-e1764907039294-640.webp 640w, /images/apollo/photo_2025-12-03_10-38-14-e1764907039294.webp 873w"
+  },
+  "/images/apollo/endevour-hills-after-3.jpg": {
+    "width": 1173,
+    "height": 784,
+    "fallback": "/images/apollo/endevour-hills-after-3.jpg",
+    "webp": "/images/apollo/endevour-hills-after-3.webp",
+    "webpSrcSet": "/images/apollo/endevour-hills-after-3-640.webp 640w, /images/apollo/endevour-hills-after-3-960.webp 960w, /images/apollo/endevour-hills-after-3.webp 1173w"
+  },
+  "/images/apollo/remodeling-app.webp": {
+    "width": 826,
+    "height": 552,
+    "fallback": "/images/apollo/remodeling-app.jpg",
+    "webp": "/images/apollo/remodeling-app.webp",
+    "webpSrcSet": "/images/apollo/remodeling-app-640.webp 640w, /images/apollo/remodeling-app.webp 826w"
+  },
+  "/images/apollo/Clyde-new-build-3-1.jpg": {
+    "width": 1168,
+    "height": 784,
+    "fallback": "/images/apollo/Clyde-new-build-3-1.jpg",
+    "webp": "/images/apollo/Clyde-new-build-3-1.webp",
+    "webpSrcSet": "/images/apollo/Clyde-new-build-3-1-640.webp 640w, /images/apollo/Clyde-new-build-3-1-960.webp 960w, /images/apollo/Clyde-new-build-3-1.webp 1168w"
+  },
+  "/images/apollo/Altona-Meadows-after-3-1-e1763617143254-1024x633.jpg": {
+    "width": 1024,
+    "height": 633,
+    "fallback": "/images/apollo/Altona-Meadows-after-3-1-e1763617143254-1024x633.jpg",
+    "webp": "/images/apollo/Altona-Meadows-after-3-1-e1763617143254-1024x633.webp",
+    "webpSrcSet": "/images/apollo/Altona-Meadows-after-3-1-e1763617143254-1024x633-640.webp 640w, /images/apollo/Altona-Meadows-after-3-1-e1763617143254-1024x633-960.webp 960w, /images/apollo/Altona-Meadows-after-3-1-e1763617143254-1024x633.webp 1024w"
+  },
+  "/images/apollo/endevour-hills-after-4.jpg": {
+    "width": 1170,
+    "height": 784,
+    "fallback": "/images/apollo/endevour-hills-after-4.jpg",
+    "webp": "/images/apollo/endevour-hills-after-4.webp",
+    "webpSrcSet": "/images/apollo/endevour-hills-after-4-640.webp 640w, /images/apollo/endevour-hills-after-4-960.webp 960w, /images/apollo/endevour-hills-after-4.webp 1170w"
+  },
+  "/images/apollo/bentleigh-east-new-4-1.jpg": {
+    "width": 1174,
+    "height": 723,
+    "fallback": "/images/apollo/bentleigh-east-new-4-1.jpg",
+    "webp": "/images/apollo/bentleigh-east-new-4-1.webp",
+    "webpSrcSet": "/images/apollo/bentleigh-east-new-4-1-640.webp 640w, /images/apollo/bentleigh-east-new-4-1-960.webp 960w, /images/apollo/bentleigh-east-new-4-1.webp 1174w"
+  },
+  "/images/apollo/premium-renovation-hero.png": {
+    "width": 1600,
+    "height": 900,
+    "fallback": "/images/apollo/premium-renovation-hero.jpg",
+    "webp": "/images/apollo/premium-renovation-hero.webp",
+    "webpSrcSet": "/images/apollo/premium-renovation-hero-640.webp 640w, /images/apollo/premium-renovation-hero-960.webp 960w, /images/apollo/premium-renovation-hero-1280.webp 1280w, /images/apollo/premium-renovation-hero.webp 1600w"
+  },
+  "/images/apollo/house-extensions-hero.png": {
+    "width": 1600,
+    "height": 900,
+    "fallback": "/images/apollo/house-extensions-hero.jpg",
+    "webp": "/images/apollo/house-extensions-hero.webp",
+    "webpSrcSet": "/images/apollo/house-extensions-hero-640.webp 640w, /images/apollo/house-extensions-hero-960.webp 960w, /images/apollo/house-extensions-hero-1280.webp 1280w, /images/apollo/house-extensions-hero.webp 1600w"
+  },
+  "/images/apollo/endevour-hills-after-1-1024x686.jpg": {
+    "width": 1024,
+    "height": 686,
+    "fallback": "/images/apollo/endevour-hills-after-1-1024x686.jpg",
+    "webp": "/images/apollo/endevour-hills-after-1-1024x686.webp",
+    "webpSrcSet": "/images/apollo/endevour-hills-after-1-1024x686-640.webp 640w, /images/apollo/endevour-hills-after-1-1024x686-960.webp 960w, /images/apollo/endevour-hills-after-1-1024x686.webp 1024w"
+  },
+  "/images/apollo/bathroom-renovation-hero.png": {
+    "width": 1600,
+    "height": 900,
+    "fallback": "/images/apollo/bathroom-renovation-hero.jpg",
+    "webp": "/images/apollo/bathroom-renovation-hero.webp",
+    "webpSrcSet": "/images/apollo/bathroom-renovation-hero-640.webp 640w, /images/apollo/bathroom-renovation-hero-960.webp 960w, /images/apollo/bathroom-renovation-hero-1280.webp 1280w, /images/apollo/bathroom-renovation-hero.webp 1600w"
+  },
+  "/images/related-services/apollo-completed-projects.png": {
+    "width": 1586,
+    "height": 992,
+    "fallback": "/images/related-services/apollo-completed-projects.jpg",
+    "webp": "/images/related-services/apollo-completed-projects.webp",
+    "webpSrcSet": "/images/related-services/apollo-completed-projects-640.webp 640w, /images/related-services/apollo-completed-projects-960.webp 960w, /images/related-services/apollo-completed-projects-1280.webp 1280w, /images/related-services/apollo-completed-projects.webp 1586w"
+  },
+  "/images/related-services/knock-down-rebuild-melbourne.png": {
+    "width": 1586,
+    "height": 992,
+    "fallback": "/images/related-services/knock-down-rebuild-melbourne.jpg",
+    "webp": "/images/related-services/knock-down-rebuild-melbourne.webp",
+    "webpSrcSet": "/images/related-services/knock-down-rebuild-melbourne-640.webp 640w, /images/related-services/knock-down-rebuild-melbourne-960.webp 960w, /images/related-services/knock-down-rebuild-melbourne-1280.webp 1280w, /images/related-services/knock-down-rebuild-melbourne.webp 1586w"
+  },
+  "/images/related-services/kitchen-renovations-melbourne.png": {
+    "width": 1586,
+    "height": 992,
+    "fallback": "/images/related-services/kitchen-renovations-melbourne.jpg",
+    "webp": "/images/related-services/kitchen-renovations-melbourne.webp",
+    "webpSrcSet": "/images/related-services/kitchen-renovations-melbourne-640.webp 640w, /images/related-services/kitchen-renovations-melbourne-960.webp 960w, /images/related-services/kitchen-renovations-melbourne-1280.webp 1280w, /images/related-services/kitchen-renovations-melbourne.webp 1586w"
+  },
+  "/images/related-services/design-build-melbourne.png": {
+    "width": 1586,
+    "height": 992,
+    "fallback": "/images/related-services/design-build-melbourne.jpg",
+    "webp": "/images/related-services/design-build-melbourne.webp",
+    "webpSrcSet": "/images/related-services/design-build-melbourne-640.webp 640w, /images/related-services/design-build-melbourne-960.webp 960w, /images/related-services/design-build-melbourne-1280.webp 1280w, /images/related-services/design-build-melbourne.webp 1586w"
+  },
+  "/images/related-services/custom-home-builders-melbourne.png": {
+    "width": 1586,
+    "height": 992,
+    "fallback": "/images/related-services/custom-home-builders-melbourne.jpg",
+    "webp": "/images/related-services/custom-home-builders-melbourne.webp",
+    "webpSrcSet": "/images/related-services/custom-home-builders-melbourne-640.webp 640w, /images/related-services/custom-home-builders-melbourne-960.webp 960w, /images/related-services/custom-home-builders-melbourne-1280.webp 1280w, /images/related-services/custom-home-builders-melbourne.webp 1586w"
+  },
+  "/images/related-services/house-extensions-melbourne.png": {
+    "width": 1586,
+    "height": 992,
+    "fallback": "/images/related-services/house-extensions-melbourne.jpg",
+    "webp": "/images/related-services/house-extensions-melbourne.webp",
+    "webpSrcSet": "/images/related-services/house-extensions-melbourne-640.webp 640w, /images/related-services/house-extensions-melbourne-960.webp 960w, /images/related-services/house-extensions-melbourne-1280.webp 1280w, /images/related-services/house-extensions-melbourne.webp 1586w"
+  },
+  "/images/related-services/home-renovations-melbourne.png": {
+    "width": 1586,
+    "height": 992,
+    "fallback": "/images/related-services/home-renovations-melbourne.jpg",
+    "webp": "/images/related-services/home-renovations-melbourne.webp",
+    "webpSrcSet": "/images/related-services/home-renovations-melbourne-640.webp 640w, /images/related-services/home-renovations-melbourne-960.webp 960w, /images/related-services/home-renovations-melbourne-1280.webp 1280w, /images/related-services/home-renovations-melbourne.webp 1586w"
+  }
+}

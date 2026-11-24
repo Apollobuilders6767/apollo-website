@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, ImageIcon } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import OptimizedImage from "@/components/OptimizedImage";
 
 /* -----------------------------------------
    Related services
@@ -45,7 +46,7 @@ function RelatedServiceImage({ src, alt }) {
   return (
     <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#EDE6DA]">
       {src && !imageError ? (
-        <img
+        <OptimizedImage
           src={src}
           alt={alt}
           loading="lazy"

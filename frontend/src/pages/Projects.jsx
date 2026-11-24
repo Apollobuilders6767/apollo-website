@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Reveal, MaskLines } from "@/components/Reveal";
 import { projects } from "@/lib/data";
 import SEO, { breadcrumbSchema } from "@/components/SEO";
+import OptimizedImage from "@/components/OptimizedImage";
 
 export default function Projects() {
   const jsonLd = {
@@ -28,7 +29,7 @@ export default function Projects() {
     <div data-testid="projects-page">
       <SEO
         title="Our Projects — Apollo Builders | Melbourne South-East Renovations & New Builds"
-        description="Explore Apollo Builders' completed new home builds and renovations across Melbourne's South-East — including Drouin, Bentleigh East, Berwick, Endevour Hills, Clyde and Altona Meadows."
+        description="Explore Apollo Builders' completed new home builds and renovations across Melbourne's South-East — including Drouin, Bentleigh East, Berwick, Endeavour Hills, Clyde and Altona Meadows."
         path="/our-projects/"
         jsonLd={jsonLd}
       />
@@ -55,7 +56,7 @@ export default function Projects() {
                 className="group block"
               >
                 <div className="frame aspect-[4/3] overflow-hidden">
-                  <img
+                  <OptimizedImage
                     src={p.image}
                     alt={p.imageAlt}
                     loading="lazy"

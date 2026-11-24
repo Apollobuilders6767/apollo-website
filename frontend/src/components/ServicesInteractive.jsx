@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Plus } from "lucide-react";
 import { services } from "@/lib/data";
+import OptimizedImage from "@/components/OptimizedImage";
 
 /**
  * Interactive services — large horizontal panels that expand on hover
@@ -159,7 +160,7 @@ export default function ServicesInteractive({ order }) {
                       : "1 1 0%",
                   }}
                 >
-                  <img
+                  <OptimizedImage
                     src={service.image}
                     alt={service.imageAlt}
                     className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
@@ -307,7 +308,7 @@ export default function ServicesInteractive({ order }) {
                       className="overflow-hidden px-6 pb-8"
                     >
                       <div className="frame aspect-[16/10] mb-5">
-                        <img
+                        <OptimizedImage
                           src={service.image}
                           alt={service.imageAlt}
                           className="h-full w-full object-cover"

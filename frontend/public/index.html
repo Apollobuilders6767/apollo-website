@@ -2,7 +2,10 @@
 <html lang="en">
     <head>
         
-                <!-- Google Tag Manager -->
+                <!-- Google Tag Manager (GTM-NHWK3LHN).
+             Installed once in this file (head snippet + body noscript).
+             Do not inject the container again from React. SPA route
+             changes push a dataLayer page_view from Analytics.jsx. -->
         <script>
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -23,13 +26,13 @@
              hardened further by asking Emergent Support to set frame-ancestors at the edge). -->
         <meta http-equiv="Content-Security-Policy" content="
           default-src 'self';
-          script-src 'self' 'unsafe-inline' https://assets.emergent.sh https://ap.emergent.sh https://*.i.posthog.com https://www.googletagmanager.com https://www.google-analytics.com https://static.cloudflareinsights.com https://googleads.g.doubleclick.net;
-          script-src-elem 'self' 'unsafe-inline' https://assets.emergent.sh https://ap.emergent.sh https://*.i.posthog.com https://www.googletagmanager.com https://www.google-analytics.com https://static.cloudflareinsights.com https://googleads.g.doubleclick.net;
+          script-src 'self' 'unsafe-inline' https://assets.emergent.sh https://ap.emergent.sh https://*.i.posthog.com https://www.googletagmanager.com https://www.google-analytics.com https://static.cloudflareinsights.com https://googleads.g.doubleclick.net https://www.googleadservices.com;
+          script-src-elem 'self' 'unsafe-inline' https://assets.emergent.sh https://ap.emergent.sh https://*.i.posthog.com https://www.googletagmanager.com https://www.google-analytics.com https://static.cloudflareinsights.com https://googleads.g.doubleclick.net https://www.googleadservices.com;
           style-src-elem 'self' 'unsafe-inline' https://fonts.googleapis.com;
           font-src 'self' https://fonts.gstatic.com data:;
           img-src 'self' https: data: blob:;
-          connect-src 'self' https://www.apollobuilders.com.au https://premium-apollo.emergent.host https://premium-apollo.preview.emergentagent.com https://ap.emergent.sh https://*.i.posthog.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://www.googletagmanager.com https://google.com https://www.google.com https://doubleclickad.doubleclick.net https://googleads.g.doubleclick.net https://ad.doubleclick.net https://stats.g.doubleclick.net;
-          frame-src 'self' https://www.googletagmanager.com;
+          connect-src 'self' https://www.apollobuilders.com.au https://apollo-website-udoj-gamma.vercel.app https://premium-apollo.emergent.host https://premium-apollo.preview.emergentagent.com https://ap.emergent.sh https://*.i.posthog.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://www.googletagmanager.com https://www.googleadservices.com https://google.com https://www.google.com https://www.google.com.au https://doubleclickad.doubleclick.net https://googleads.g.doubleclick.net https://ad.doubleclick.net https://stats.g.doubleclick.net https://td.doubleclick.net https://pagead2.googlesyndication.com;
+          frame-src 'self' https://www.googletagmanager.com https://www.google.com https://bid.g.doubleclick.net https://td.doubleclick.net https://googleads.g.doubleclick.net;
           object-src 'none';
           base-uri 'self';
           form-action 'self';
@@ -39,7 +42,34 @@
         " />
         <meta http-equiv="X-Content-Type-Options" content="nosniff" />
         <meta name="referrer" content="strict-origin-when-cross-origin" />
-        <!-- Per-page SEO (description, canonical, OG, Twitter, JSON-LD) is injected client-side via react-helmet-async (see /src/components/SEO.jsx) to avoid duplicate tags. -->
+        <!-- Fallback tags for the raw HTML. Removed after hydration so Helmet does not leave duplicates. -->
+        <title data-apollo-fallback>Apollo Builders — Renovations &amp; Custom Homes, Melbourne South-East</title>
+        <meta data-apollo-fallback name="description" content="Apollo Builders delivers new home builds, full home renovations, kitchen and bathroom renovations across Melbourne's South-East. Call 0422 339 622." />
+        <link data-apollo-fallback rel="canonical" href="https://www.apollobuilders.com.au/" />
+        <meta data-apollo-fallback property="og:type" content="website" />
+        <meta data-apollo-fallback property="og:site_name" content="Apollo Builders" />
+        <meta data-apollo-fallback property="og:title" content="Apollo Builders — Renovations &amp; Custom Homes, Melbourne South-East" />
+        <meta data-apollo-fallback property="og:description" content="New home builds, full home renovations, kitchens and bathrooms across Melbourne's South-East. Call 0422 339 622." />
+        <meta data-apollo-fallback property="og:url" content="https://www.apollobuilders.com.au/" />
+        <meta data-apollo-fallback property="og:image" content="https://www.apollobuilders.com.au/images/apollo/drouin-new-build-3.jpg" />
+        <script data-apollo-fallback type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@type": ["GeneralContractor", "LocalBusiness", "HomeAndConstructionBusiness", "Organization"],
+            "@id": "https://www.apollobuilders.com.au/#business",
+            "name": "Apollo Builders",
+            "url": "https://www.apollobuilders.com.au/",
+            "telephone": "+61422339622",
+            "email": "info@apollobuilders.com.au",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Melbourne",
+              "addressRegion": "VIC",
+              "addressCountry": "AU"
+            },
+            "areaServed": "Melbourne South-East"
+          }
+        </script>
 
         <!-- Fonts: Fraunces (headings) + Inter Tight (body) — preloaded -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -56,11 +86,11 @@
         <script>window.addEventListener("error",function(e){if(e.error instanceof DOMException&&e.error.name==="DataCloneError"&&e.message&&e.message.includes("PerformanceServerTiming")){e.stopImmediatePropagation();e.preventDefault()}},true);</script>
         <script src="https://assets.emergent.sh/scripts/emergent-main.js"></script>
 
-            <link
-            rel="icon"
-            type="image/png"
-            href="/images/apollo/photo_2025-12-03_10-38-14-e1764907039294.png"
-            />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
     </head>
     <body>
 

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, ChevronDown, ImageIcon } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import OptimizedImage from "@/components/OptimizedImage";
 
 const paragraphClass =
   "text-[15px] leading-[1.8] text-[color:var(--ink)] md:text-[16px]";
@@ -322,7 +323,7 @@ function SolutionCard({
         >
           {/* Compact image */}
           <div className="relative h-[130px] w-full shrink-0 overflow-hidden bg-[color:var(--cream)] sm:h-[145px] lg:h-[140px]">
-            <img
+            <OptimizedImage
               src={solution.image}
               alt={`${solution.title} architectural design concept`}
               loading="lazy"

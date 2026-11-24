@@ -8,6 +8,7 @@ import SEO, {
 } from "@/components/SEO";
 
 import { Reveal, MaskLines } from "@/components/Reveal";
+import OptimizedImage from "@/components/OptimizedImage";
 
 export default function DesignBuildMelbourne() {
   const canonical = "/design-build-melbourne/";
@@ -249,7 +250,7 @@ export default function DesignBuildMelbourne() {
 
             <Reveal className="lg:col-span-5" delay={0.1}>
               <div className="overflow-hidden rounded-[2px]">
-                <img
+                <OptimizedImage
                   src="/images/apollo/melbourne-custom-home-builders-drouin.jpg"
                   alt="Custom home exterior completed by Apollo Builders"
                   className="h-[420px] w-full object-cover md:h-[560px] lg:h-[640px]"

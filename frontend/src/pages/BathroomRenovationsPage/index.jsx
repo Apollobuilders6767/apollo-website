@@ -21,6 +21,7 @@ import BathroomProjects from "./BathroomProjects";
 import BathroomServiceArea from "./BathroomServiceArea";
 import BathroomFAQ from "./BathroomFAQ";
 import BathroomCTA from "./BathroomCTA";
+import QuoteForm from "@/components/QuoteForm";
 
 export default function BathroomRenovationsPage() {
   const data = servicePages["bathroom-renovations"];
@@ -88,6 +89,7 @@ export default function BathroomRenovationsPage() {
       <BathroomFAQ data={data} faqs={faqs} />
 
       <BathroomCTA data={data} />
+      <QuoteForm formName="bathroom-renovations" defaultProject="Bathroom" />
     </div>
   );
 }
