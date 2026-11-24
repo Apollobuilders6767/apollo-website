@@ -5,7 +5,7 @@ import { captureAttribution } from "@/lib/attribution";
 /**
  * Analytics
  *
- * GTM-NHWK3LHN is installed once in public/index.html (head snippet plus
+ * GTM-TR8L5JXX is installed once in public/index.html (head snippet plus
  * the noscript iframe). This component must not inject that container again.
  *
  * Because the app is a single-page router, GTM's first load only sees the
