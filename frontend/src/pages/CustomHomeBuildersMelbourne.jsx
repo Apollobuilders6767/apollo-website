@@ -8,6 +8,7 @@ import SEO, {
 } from "@/components/SEO";
 
 import { Reveal, MaskLines } from "@/components/Reveal";
+import OptimizedImage from "@/components/OptimizedImage";
 
 export default function CustomHomeBuildersMelbourne() {
   const canonical = "/custom-home-builders-melbourne/";
@@ -95,6 +96,7 @@ export default function CustomHomeBuildersMelbourne() {
         title="Custom Home Builders Melbourne | Apollo Builders"
         description="Build a custom home in Melbourne with Apollo Builders. We create individually planned homes designed around your site, lifestyle and project requirements."
         path={canonical}
+        canonicalPath="/new-home-builds/"
         jsonLd={jsonLd}
       />
 
@@ -151,7 +153,7 @@ export default function CustomHomeBuildersMelbourne() {
 
             <Reveal className="lg:col-span-5" delay={0.1}>
               <div className="overflow-hidden rounded-[2px]">
-                <img
+                <OptimizedImage
                   src="/images/apollo/melbourne-custom-home-builders-drouin.jpg"
                   alt="Custom home built in Drouin by Apollo Builders"
                   className="h-[420px] w-full object-cover md:h-[560px] lg:h-[640px]"

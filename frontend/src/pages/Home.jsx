@@ -25,6 +25,8 @@ import {
   trustPoints,
 } from "@/lib/data";
 import SEO, { localBusiness, faqSchema } from "@/components/SEO";
+import QuoteForm from "@/components/QuoteForm";
+import OptimizedImage from "@/components/OptimizedImage";
 
 const ease = [0.16, 1, 0.3, 1];
 
@@ -82,7 +84,7 @@ function Hero() {
           translateY: py,
         }}
       >
-        <img
+        <OptimizedImage
           src="/images/apollo/Berwick-New-Build-5-e1762576152191.jpg"
           alt="Berwick two-storey new home build by Apollo Builders — Melbourne South-East"
           className="w-full h-full object-cover"
@@ -322,7 +324,7 @@ function Projects() {
                   }`}
                 >
                   <div className="frame aspect-[16/10]">
-                    <img
+                    <OptimizedImage
                       src={p.image}
                       alt={p.imageAlt}
                       loading="lazy"
@@ -537,7 +539,7 @@ function CTA() {
       aria-labelledby="cta-heading"
     >
       <div className="absolute inset-0 opacity-[0.18]">
-        <img
+        <OptimizedImage
           src="/images/apollo/Drouin-New-Build-10.jpg"
           alt=""
           className="w-full h-full object-cover"
@@ -662,6 +664,8 @@ export default function Home() {
       <Testimonials />
 
       <FAQ />
+
+      <QuoteForm formName="home" />
 
       <CTA />
     </div>

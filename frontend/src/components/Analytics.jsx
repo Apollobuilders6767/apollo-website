@@ -1,102 +1,96 @@
 import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
+import { captureAttribution } from "@/lib/attribution";
 
 /**
  * Analytics
  *
- * Global GA4 + GTM installer, mounted once at the App root. Responsibilities:
- *   • Injects the gtag.js library exactly once (via useEffect + createElement)
- *   • Configures GA4 with `send_page_view: false` so we can control page_view
- *     events explicitly per SPA route change
- *   • Subscribes to `useLocation` and fires `gtag('event', 'page_view', {...})`
- *     on every route change (React Router doesn't do this automatically)
- *   • Same lifecycle for GTM (independent from GA4 — can run both or either)
+ * GTM-NHWK3LHN is installed once in public/index.html (head snippet plus
+ * the noscript iframe). This component must not inject that container again.
  *
- * Activation:
- *   Set `REACT_APP_GA4_ID` (format `G-XXXXXXXXXX`) and/or `REACT_APP_GTM_ID`
- *   (format `GTM-XXXXXXX`) in `frontend/.env`, then rebuild + redeploy.
- *   When neither is set, this component is a total no-op — no network
- *   requests, no side effects, no console output.
+ * Because the app is a single-page router, GTM's first load only sees the
+ * landing URL. On every route change we push:
+ *   { event: 'page_view', page_path, page_title }
+ * The push is deferred so react-helmet has written the new document title.
  *
- * Notes:
- *   • The CSP in `public/index.html` already whitelists gtag + GA endpoints,
- *     no CSP edit is required to activate this.
- *   • `anonymize_ip: true` is set for AU privacy compliance (mentioned in
- *     the Privacy Policy).
- *   • The previous scaffolding in `SEO.jsx` has been removed to avoid
- *     double-injection when this component is active.
+ * GA4 (REACT_APP_GA4_ID) is optional and loaded once here, with automatic
+ * page views off so they are not double-counted against the dataLayer event.
+ * Phone and email clicks are delegated from the document so every tel: and
+ * mailto: link is covered, including ones rendered later.
  */
 export default function Analytics() {
   const { pathname, search } = useLocation();
-  const initialised = useRef(false);
-
+  const gaReady = useRef(false);
   const gaId = process.env.REACT_APP_GA4_ID?.trim();
-  const gtmId = process.env.REACT_APP_GTM_ID?.trim();
 
-  // ── Install gtag.js + GTM once on mount ────────────────────────────
   useEffect(() => {
-    if (initialised.current) return;
-    if (!gaId && !gtmId) return; // dormant when no IDs set
-    initialised.current = true;
+    captureAttribution(search);
+    // Drop the raw-HTML fallback tags once Helmet has written the route tags,
+    // so crawlers that run JavaScript don't see two titles.
+    const timer = window.setTimeout(() => {
+      document.querySelectorAll("[data-apollo-fallback]").forEach((node) => node.remove());
+    }, 0);
+    return () => window.clearTimeout(timer);
+  }, [search, pathname]);
 
-    // Initialise the shared dataLayer + gtag helper before either
-    // library boots. Both GA4 and GTM read from window.dataLayer.
+  useEffect(() => {
+    if (gaReady.current || !gaId) return;
+    gaReady.current = true;
+
     window.dataLayer = window.dataLayer || [];
     // eslint-disable-next-line prefer-rest-params
     window.gtag = function gtag() { window.dataLayer.push(arguments); };
     window.gtag("js", new Date());
 
-    // ─── GA4 ────
-    if (gaId) {
-      const s = document.createElement("script");
-      s.async = true;
-      s.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
-      document.head.appendChild(s);
+    const s = document.createElement("script");
+    s.async = true;
+    s.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
+    document.head.appendChild(s);
+    // page_view is pushed to dataLayer below; don't also auto-send one.
+    window.gtag("config", gaId, {
+      send_page_view: false,
+      anonymize_ip: true,
+    });
+  }, [gaId]);
 
-      // page_view will be fired manually on every route change; disable
-      // the auto pageview so we don't double-count the initial load.
-      window.gtag("config", gaId, {
-        send_page_view: false,
-        anonymize_ip: true,
-      });
-    }
-
-    // ─── GTM ────
-    if (gtmId) {
-      const s = document.createElement("script");
-      s.async = true;
-      s.src = `https://www.googletagmanager.com/gtm.js?id=${gtmId}`;
-      document.head.appendChild(s);
-      window.dataLayer.push({ "gtm.start": Date.now(), event: "gtm.js" });
-    }
-  }, [gaId, gtmId]);
-
-  // ── Fire page_view on every SPA route change (including initial) ──
   useEffect(() => {
-    if (!gaId && !gtmId) return;
-    if (typeof window.gtag !== "function") return;
-
-    const page_location = window.location.href;
-    const page_path = pathname + search;
-    const page_title = document.title;
-
-    if (gaId) {
-      window.gtag("event", "page_view", {
-        page_location,
-        page_path,
-        page_title,
-        send_to: gaId,
-      });
-    }
-    if (gtmId) {
+    const timer = window.setTimeout(() => {
+      const page_path = `${pathname}${search}` || "/";
+      const page_title = document.title || "Apollo Builders";
+      window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         event: "page_view",
-        page_location,
         page_path,
         page_title,
       });
+      if (gaId && typeof window.gtag === "function") {
+        window.gtag("event", "page_view", {
+          page_path,
+          page_title,
+          page_location: window.location.href,
+          send_to: gaId,
+        });
+      }
+    }, 0);
+    return () => window.clearTimeout(timer);
+  }, [pathname, search, gaId]);
+
+  useEffect(() => {
+    function onClick(event) {
+      const anchor = event.target?.closest?.("a[href]");
+      if (!anchor) return;
+      const href = anchor.getAttribute("href") || "";
+      const lower = href.toLowerCase();
+      window.dataLayer = window.dataLayer || [];
+      if (lower.startsWith("tel:")) {
+        window.dataLayer.push({ event: "phone_click", link_url: href });
+      } else if (lower.startsWith("mailto:")) {
+        window.dataLayer.push({ event: "email_click", link_url: href });
+      }
     }
-  }, [pathname, search, gaId, gtmId]);
+    document.addEventListener("click", onClick, true);
+    return () => document.removeEventListener("click", onClick, true);
+  }, []);
 
   return null;
 }

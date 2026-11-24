@@ -141,6 +141,7 @@ export default function HomeRenovationsMelbourne() {
         title="Home Renovations Melbourne | Apollo Builders"
         description="Transform your Melbourne home with Apollo Builders. We deliver complete home renovations, thoughtful design, quality construction and tailored renovation solutions."
         path={canonical}
+        canonicalPath="/home-renovations/"
         jsonLd={jsonLd}
       />
 

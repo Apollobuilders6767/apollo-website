@@ -12,6 +12,7 @@ import {
 import { Reveal, MaskLines } from "@/components/Reveal";
 import { projects, projectProcess, services as siteServices } from "@/lib/data";
 import SEO, { breadcrumbSchema } from "@/components/SEO";
+import OptimizedImage from "@/components/OptimizedImage";
 
 /**
  * ProjectDetail — SEO case-study template.
@@ -28,6 +29,9 @@ import SEO, { breadcrumbSchema } from "@/components/SEO";
  */
 export default function ProjectDetail() {
   const { slug } = useParams();
+  if (slug === "endevour-hills-renovation") {
+    return <Navigate to="/our-projects/endeavour-hills-renovation/" replace />;
+  }
   const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
@@ -158,7 +162,7 @@ export default function ProjectDetail() {
       <section className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-14 pb-16 md:pb-24">
         <Reveal>
           <div className="frame aspect-[21/9]">
-            <img
+            <OptimizedImage
               src={project.hero}
               alt={project.imageAlt}
               fetchPriority="high"
@@ -396,7 +400,7 @@ export default function ProjectDetail() {
               {project.gallery.map((src, i) => (
                 <Reveal key={src + i} delay={(i % 2) * 0.05}>
                   <div className={`frame ${i % 3 === 0 ? "aspect-[4/3]" : "aspect-[16/11]"}`}>
-                    <img
+                    <OptimizedImage
                       src={src}
                       alt={`${project.name}, ${project.suburb} — Apollo Builders photograph ${i + 1}`}
                       loading="lazy"
@@ -511,7 +515,7 @@ export default function ProjectDetail() {
                 className="group block"
               >
                 <div className="frame aspect-[4/3]">
-                  <img src={p.image} alt={p.imageAlt} loading="lazy" />
+                  <OptimizedImage src={p.image} alt={p.imageAlt} loading="lazy" />
                 </div>
                 <div className="mt-5">
                   <div className="tracking-eyebrow text-[color:var(--gold-dark)] text-[11px]">

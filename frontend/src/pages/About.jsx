@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Reveal, MaskLines } from "@/components/Reveal";
 import { whyUs, suburbs, projects } from "@/lib/data";
 import SEO, { localBusiness, breadcrumbSchema } from "@/components/SEO";
+import OptimizedImage from "@/components/OptimizedImage";
 
 export default function About() {
   return (
@@ -26,7 +27,7 @@ export default function About() {
       <section className="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-14 pb-24 md:pb-32">
         <Reveal>
           <div className="frame aspect-[16/9] md:aspect-[21/9]">
-            <img
+            <OptimizedImage
               src="/images/apollo/Drouin-New-Build.jpg"
               alt="Apollo Builders — knockdown and rebuild specialist project in Drouin"
             />

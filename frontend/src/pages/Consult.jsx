@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-import axios from "axios";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { Reveal, MaskLines } from "@/components/Reveal";
+import AttributionFields from "@/components/AttributionFields";
 import { brand, gallery } from "@/lib/data";
+import { submitEnquiry } from "@/lib/enquiries";
 import SEO, { breadcrumbSchema, localBusiness } from "@/components/SEO";
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+import OptimizedImage from "@/components/OptimizedImage";
 
 const highlights = [
   "64+ trades coordinated under one team",
@@ -42,16 +42,16 @@ export default function Consult() {
     }
     setBusy(true);
     try {
-      await axios.post(`${API}/enquiries`, {
+      await submitEnquiry({
         ...form,
+        form_name: "consult",
         project_type: form.project_type || "Consultation",
         message: `[Consultation Request]\n${form.message || "No message provided."}`,
         form_loaded_at: formLoadedAt.current,
       });
       navigate("/thanks");
     } catch (err) {
-      const msg = err?.response?.data?.detail?.[0]?.msg || err?.response?.data?.detail || "Something went wrong. Please try again.";
-      toast.error(String(msg));
+      toast.error(err.userMessage || "Something went wrong. Please try again.");
     } finally { setBusy(false); }
   };
 
@@ -106,6 +106,7 @@ export default function Consult() {
                 No obligation. We&rsquo;ll simply see whether Apollo Builders is the right fit for your project.
               </p>
               <form onSubmit={submit} className="mt-8 space-y-4" data-testid="consult-form" noValidate>
+                <AttributionFields />
                 <div aria-hidden="true" style={{ position: "absolute", left: "-9999px" }}>
                   <input tabIndex={-1} autoComplete="off" name="website" value={form.website} onChange={onChange} />
                 </div>
@@ -155,7 +156,7 @@ export default function Consult() {
           {gallery.slice(0, 8).concat(gallery.slice(0, 4)).map((g, i) => (
             <Reveal key={i} delay={(i % 4) * 0.03}>
               <div className="frame aspect-square">
-                <img src={g.src} alt={g.alt} loading="lazy" />
+                <OptimizedImage src={g.src} alt={g.alt} loading="lazy" />
               </div>
             </Reveal>
           ))}

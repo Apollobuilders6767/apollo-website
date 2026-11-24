@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 
 import { Reveal } from "@/components/Reveal";
+import OptimizedImage from "@/components/OptimizedImage";
 
 const solutions = [
   {
@@ -78,7 +79,7 @@ function SolutionCard({
           {/* Card image */}
           <div className="relative h-[165px] w-full overflow-hidden bg-[#F0E7D9] sm:h-[180px] lg:h-[195px]">
             {!imageFailed ? (
-              <img
+              <OptimizedImage
                 src={solution.image}
                 alt={`${solution.title} architectural design concept`}
                 loading="lazy"

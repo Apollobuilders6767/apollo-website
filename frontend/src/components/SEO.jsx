@@ -12,20 +12,23 @@ export default function SEO({
   image = "/images/apollo/drouin-new-build-3.jpg",
   jsonLd = null,
   noindex = false,
+  ogTitle,
+  ogDescription,
+  canonicalPath,
 }) {
   const base = "https://www.apollobuilders.com.au";
+  const canonicalInput = canonicalPath || path;
 
   // Normalise path: ensure leading slash + trailing slash
-  let normalised = path.startsWith("/") ? path : `/${path}`;
+  let normalised = canonicalInput.startsWith("/") ? canonicalInput : `/${canonicalInput}`;
 
   if (normalised !== "/" && !normalised.endsWith("/")) {
     normalised = `${normalised}/`;
   }
 
   const canonical = `${base}${normalised}`;
-
-  const gaId = process.env.REACT_APP_GA4_ID;
-  const gtmId = process.env.REACT_APP_GTM_ID;
+  const socialTitle = ogTitle || title;
+  const socialDescription = ogDescription || description;
 
   // Make relative image URLs absolute for OG/Twitter sharing
   const absoluteImage = image.startsWith("http")
@@ -47,15 +50,15 @@ export default function SEO({
       {/* Open Graph */}
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="Apollo Builders" />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
+      <meta property="og:title" content={socialTitle} />
+      <meta property="og:description" content={socialDescription} />
       <meta property="og:image" content={absoluteImage} />
       <meta property="og:url" content={canonical} />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
+      <meta name="twitter:title" content={socialTitle} />
+      <meta name="twitter:description" content={socialDescription} />
       <meta name="twitter:image" content={absoluteImage} />
 
       {/* Structured data */}
@@ -65,45 +68,8 @@ export default function SEO({
         </script>
       )}
 
-      {/* Google Analytics 4 */}
-      {gaId && (
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-        />
-      )}
-
-      {gaId && (
-        <script>
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${gaId}', { anonymize_ip: true });
-          `}
-        </script>
-      )}
-
-      {/* Google Tag Manager */}
-      {gtmId && (
-        <script>
-          {`
-            (function(w,d,s,l,i){
-              w[l]=w[l]||[];
-              w[l].push({
-                'gtm.start': new Date().getTime(),
-                event:'gtm.js'
-              });
-              var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),
-              dl=l!='dataLayer'?'&l='+l:'';
-              j.async=true;
-              j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
-              f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','${gtmId}');
-          `}
-        </script>
-      )}
+      {/* GTM lives once in public/index.html. Do not inject it here —
+          Helmet would add a second container on every route. */}
     </Helmet>
   );
 }

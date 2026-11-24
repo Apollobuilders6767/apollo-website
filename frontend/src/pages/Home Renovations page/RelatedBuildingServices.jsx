@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import OptimizedImage from "@/components/OptimizedImage";
 
 
 const relatedServices = [
@@ -74,7 +75,7 @@ export default function RelatedBuildingServices() {
               >
                 {/* Card image */}
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#EDE6DA]">
-                  <img
+                  <OptimizedImage
                     src={item.image}
                     alt={item.alt}
                     loading="lazy"

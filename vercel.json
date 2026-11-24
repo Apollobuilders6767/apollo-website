@@ -9,8 +9,17 @@
       "entrypoint": "server.py"
     }
   },
-
   "redirects": [
+    {
+      "source": "/our-projects/endevour-hills-renovation",
+      "destination": "/our-projects/endeavour-hills-renovation/",
+      "permanent": true
+    },
+    {
+      "source": "/our-projects/endevour-hills-renovation/",
+      "destination": "/our-projects/endeavour-hills-renovation/",
+      "permanent": true
+    },
     {
       "source": "/design-build-builders-melbourne",
       "destination": "/design-build-melbourne/",
@@ -20,9 +29,168 @@
       "source": "/design-build-builders-melbourne/",
       "destination": "/design-build-melbourne/",
       "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/about-us/",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact-us/",
+      "permanent": true
+    },
+    {
+      "source": "/services/:slug",
+      "destination": "/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/our-projects/:slug",
+      "destination": "/our-projects/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/suburbs/:slug",
+      "destination": "/suburbs/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/resources/:slug",
+      "destination": "/resources/:slug/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us",
+      "destination": "/about-us/",
+      "permanent": true
+    },
+    {
+      "source": "/services",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/new-home-builds",
+      "destination": "/new-home-builds/",
+      "permanent": true
+    },
+    {
+      "source": "/home-renovations",
+      "destination": "/home-renovations/",
+      "permanent": true
+    },
+    {
+      "source": "/bathroom-renovations",
+      "destination": "/bathroom-renovations/",
+      "permanent": true
+    },
+    {
+      "source": "/kitchen-renovations",
+      "destination": "/kitchen-renovations/",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact-us/",
+      "permanent": true
+    },
+    {
+      "source": "/our-projects",
+      "destination": "/our-projects/",
+      "permanent": true
+    },
+    {
+      "source": "/kitchen-renovation-landing",
+      "destination": "/kitchen-renovation-landing/",
+      "permanent": true
+    },
+    {
+      "source": "/renovation-quote",
+      "destination": "/renovation-quote/",
+      "permanent": true
+    },
+    {
+      "source": "/consult",
+      "destination": "/consult/",
+      "permanent": true
+    },
+    {
+      "source": "/burnt-by-builders",
+      "destination": "/burnt-by-builders/",
+      "permanent": true
+    },
+    {
+      "source": "/thank-you",
+      "destination": "/thank-you/",
+      "permanent": true
+    },
+    {
+      "source": "/thanks",
+      "destination": "/thanks/",
+      "permanent": true
+    },
+    {
+      "source": "/resources",
+      "destination": "/resources/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy-policy/",
+      "permanent": true
+    },
+    {
+      "source": "/cookie-policy",
+      "destination": "/cookie-policy/",
+      "permanent": true
+    },
+    {
+      "source": "/terms-of-use",
+      "destination": "/terms-of-use/",
+      "permanent": true
+    },
+    {
+      "source": "/builders-clayton",
+      "destination": "/builders-clayton/",
+      "permanent": true
+    },
+    {
+      "source": "/melbourne-home-builders",
+      "destination": "/melbourne-home-builders/",
+      "permanent": true
+    },
+    {
+      "source": "/home-renovations-melbourne",
+      "destination": "/home-renovations-melbourne/",
+      "permanent": true
+    },
+    {
+      "source": "/house-extensions-melbourne",
+      "destination": "/house-extensions-melbourne/",
+      "permanent": true
+    },
+    {
+      "source": "/custom-home-builders-melbourne",
+      "destination": "/custom-home-builders-melbourne/",
+      "permanent": true
+    },
+    {
+      "source": "/new-home-builders-melbourne",
+      "destination": "/new-home-builders-melbourne/",
+      "permanent": true
+    },
+    {
+      "source": "/knock-down-rebuild-melbourne",
+      "destination": "/knock-down-rebuild-melbourne/",
+      "permanent": true
+    },
+    {
+      "source": "/design-build-melbourne",
+      "destination": "/design-build-melbourne/",
+      "permanent": true
     }
   ],
-
   "headers": [
     {
       "source": "/(.*)",
@@ -46,7 +214,6 @@
       ]
     }
   ],
-
   "rewrites": [
     {
       "source": "/api(/.*)?",
@@ -56,7 +223,294 @@
       }
     },
     {
-      "source": "/(.*)",
+      "source": "/images/(.*)",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/static/(.*)",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/favicon.ico",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/favicon-16x16.png",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/favicon-32x32.png",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/apple-touch-icon.png",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/logo192.png",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/logo512.png",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/manifest.json",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/robots.txt",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/404.html",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/about-us/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/services/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/new-home-builds/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/home-renovations/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/bathroom-renovations/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/kitchen-renovations/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/contact-us/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/our-projects/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/kitchen-renovation-landing/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/renovation-quote/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/consult/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/burnt-by-builders/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/thank-you/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/thanks/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/resources/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/privacy-policy/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/cookie-policy/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/terms-of-use/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/builders-clayton/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/melbourne-home-builders/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/home-renovations-melbourne/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/house-extensions-melbourne/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/custom-home-builders-melbourne/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/new-home-builders-melbourne/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/knock-down-rebuild-melbourne/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/design-build-melbourne/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/our-projects/:slug/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/suburbs/:slug/",
+      "destination": {
+        "type": "service",
+        "service": "frontend"
+      }
+    },
+    {
+      "source": "/resources/:slug/",
       "destination": {
         "type": "service",
         "service": "frontend"

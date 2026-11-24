@@ -28,7 +28,7 @@ import { useLocation, useNavigate } from "react-router-dom";
  *     resolve to their own `<Navigate>` route — this normalizer stays
  *     out of their way so the legacy redirect chain isn't broken.
  */
-const LEGACY_NO_SLASH = new Set(["/about", "/contact", "/thanks"]);
+const LEGACY_NO_SLASH = new Set(["/about", "/contact"]);
 
 export default function TrailingSlashRedirect() {
   const { pathname, search, hash } = useLocation();

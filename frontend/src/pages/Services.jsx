@@ -4,6 +4,7 @@ import { ArrowUpRight, Minus } from "lucide-react";
 import { Reveal, MaskLines } from "@/components/Reveal";
 import { services } from "@/lib/data";
 import SEO, { serviceSchema, breadcrumbSchema } from "@/components/SEO";
+import OptimizedImage from "@/components/OptimizedImage";
 
 export default function Services() {
   const { slug: paramSlug } = useParams();
@@ -55,7 +56,7 @@ export default function Services() {
               >
                 <Reveal className={`md:col-span-7 ${i % 2 ? "md:order-2" : ""}`} y={30}>
                   <div className="frame aspect-[16/11]">
-                    <img src={s.image} alt={s.imageAlt} loading="lazy" />
+                    <OptimizedImage src={s.image} alt={s.imageAlt} loading="lazy" />
                   </div>
                 </Reveal>
                 <Reveal className={`md:col-span-5 ${i % 2 ? "md:order-1" : ""}`} y={20} delay={0.05}>

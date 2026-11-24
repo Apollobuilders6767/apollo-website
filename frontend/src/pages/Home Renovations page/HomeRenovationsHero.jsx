@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal, MaskLines } from "@/components/Reveal";
+import OptimizedImage from "@/components/OptimizedImage";
 
 const HERO_IMAGE = "/images/apollo/premium-renovation-hero (2).png";
 
@@ -13,7 +14,7 @@ export default function HomeRenovationsHero() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-y-0 right-0 hidden w-[60%] lg:block"
       >
-        <img
+        <OptimizedImage
           src={HERO_IMAGE}
           alt="Modern home renovation in Melbourne featuring an open-plan living room, contemporary kitchen and indoor-outdoor living space"
           className="h-full w-full object-cover object-center"
@@ -119,7 +120,7 @@ export default function HomeRenovationsHero() {
 
       {/* Mobile / tablet image */}
       <div className="relative h-[280px] w-full overflow-hidden sm:h-[380px] lg:hidden">
-        <img
+        <OptimizedImage
           src={HERO_IMAGE}
           alt="Premium home renovation showcasing contemporary living spaces by Apollo Builders"
           className="h-full w-full object-cover object-center"

@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
-import axios from "axios";
 import { ArrowUpRight, ChefHat, Award, CheckCircle2 } from "lucide-react";
 import { Reveal, MaskLines } from "@/components/Reveal";
+import AttributionFields from "@/components/AttributionFields";
 import { brand, gallery } from "@/lib/data";
+import { submitEnquiry } from "@/lib/enquiries";
 import SEO, { breadcrumbSchema, serviceSchema } from "@/components/SEO";
-
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+import OptimizedImage from "@/components/OptimizedImage";
 
 const kitchenProcess = [
   {
@@ -80,16 +80,16 @@ export default function KitchenLanding() {
     }
     setBusy(true);
     try {
-      await axios.post(`${API}/enquiries`, {
+      await submitEnquiry({
         ...form,
+        form_name: "kitchen",
         project_type: "Kitchen",
         message: `[Bespoke Kitchen Landing]\n${form.message || "Interested in a bespoke kitchen design."}`,
         form_loaded_at: formLoadedAt.current,
       });
       navigate("/thank-you");
     } catch (err) {
-      const msg = err?.response?.data?.detail?.[0]?.msg || err?.response?.data?.detail || "Something went wrong. Please try again.";
-      toast.error(String(msg));
+      toast.error(err.userMessage || "Something went wrong. Please try again.");
     } finally { setBusy(false); }
   };
 
@@ -119,7 +119,7 @@ export default function KitchenLanding() {
       {/* Hero */}
       <section className="bg-[color:var(--ink-black)] text-[color:var(--paper)] pt-20 md:pt-28 pb-24 md:pb-32 relative overflow-hidden">
         <div className="absolute inset-0 opacity-25">
-          <img
+          <OptimizedImage
             src="/images/apollo/endevour-hills-after-4.jpg"
             alt=""
             className="w-full h-full object-cover"
@@ -219,7 +219,7 @@ export default function KitchenLanding() {
           {gallery.slice(0, 6).map((g, i) => (
             <Reveal key={i} delay={(i % 3) * 0.04}>
               <div className="frame aspect-[4/3]">
-                <img src={g.src} alt={g.alt} loading="lazy" />
+                <OptimizedImage src={g.src} alt={g.alt} loading="lazy" />
               </div>
             </Reveal>
           ))}
@@ -239,6 +239,7 @@ export default function KitchenLanding() {
           </p>
 
           <form onSubmit={submit} className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 border-t border-[color:var(--paper)]/15 pt-8" data-testid="kitchen-form" noValidate>
+            <AttributionFields />
             <div aria-hidden="true" style={{ position: "absolute", left: "-9999px" }}>
               <input tabIndex={-1} autoComplete="off" name="website" value={form.website} onChange={onChange} />
             </div>

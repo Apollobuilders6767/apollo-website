@@ -16,6 +16,7 @@ import KitchenWhyApollo from "./KitchenWhyApollo";
 import KitchenProjects from "./KitchenProjects";
 import KitchenFAQ from "./KitchenFAQ";
 import KitchenCTA from "./KitchenCTA";
+import QuoteForm from "@/components/QuoteForm";
 
 export default function KitchenRenovationsPage() {
   const data = servicePages["kitchen-renovations"];
@@ -76,6 +77,7 @@ export default function KitchenRenovationsPage() {
       <KitchenFAQ data={data} faqs={faqs} />
 
       <KitchenCTA data={data} />
+      <QuoteForm formName="kitchen-renovations" defaultProject="Kitchen" />
     </div>
   );
 }

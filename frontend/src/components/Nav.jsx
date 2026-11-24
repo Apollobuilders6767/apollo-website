@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { brand } from "@/lib/data";
+import OptimizedImage from "@/components/OptimizedImage";
 
 const links = [
   { to: "/", label: "Home" },
@@ -42,7 +43,7 @@ export default function Nav() {
                 aria-label="Apollo Builders — home"
                 className="flex items-center gap-4 group focus-visible:outline-2 focus-visible:outline-[color:var(--gold)] focus-visible:outline-offset-4"
               >
-                <img
+                <OptimizedImage
                   src={brand.logo}
                   alt="Apollo Builders"
                   className="h-16 md:h-20 w-auto"

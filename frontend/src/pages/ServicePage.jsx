@@ -15,6 +15,8 @@ import SEO, {
   localBusiness,
   faqSchema,
 } from "@/components/SEO";
+import OptimizedImage from "@/components/OptimizedImage";
+import QuoteForm from "@/components/QuoteForm";
 
 /**
  * Dedicated service page — one component, four routes.
@@ -105,7 +107,7 @@ export default function ServicePage() {
           </Reveal>
           <Reveal className="lg:col-span-7" delay={0.05}>
             <div className="frame aspect-[4/3]">
-              <img src={data.beforeAfter.image} alt={data.beforeAfter.imageAlt} />
+              <OptimizedImage src={data.beforeAfter.image} alt={data.beforeAfter.imageAlt} />
             </div>
           </Reveal>
         </section>
@@ -135,7 +137,7 @@ export default function ServicePage() {
             {data.collage.map((img, i) => (
               <Reveal key={i} delay={(i % 3) * 0.05}>
                 <div className={`frame ${i === 1 ? "aspect-[4/5]" : "aspect-[4/3]"}`}>
-                  <img src={img.src} alt={img.alt} loading="lazy" />
+                  <OptimizedImage src={img.src} alt={img.alt} loading="lazy" />
                 </div>
               </Reveal>
             ))}
@@ -187,7 +189,7 @@ export default function ServicePage() {
             {data.designSection.image && (
               <Reveal className="lg:col-span-6">
                 <div className="frame aspect-[4/3]">
-                  <img src={data.designSection.image} alt={data.designSection.imageAlt} />
+                  <OptimizedImage src={data.designSection.image} alt={data.designSection.imageAlt} />
                 </div>
               </Reveal>
             )}
@@ -266,7 +268,7 @@ export default function ServicePage() {
                   </Reveal>
                   <Reveal className={`lg:col-span-6 ${flip ? "lg:order-1" : ""}`} delay={0.05}>
                     <div className="frame aspect-[4/3]">
-                      <img src={f.image} alt={f.imageAlt} loading="lazy" />
+                      <OptimizedImage src={f.image} alt={f.imageAlt} loading="lazy" />
                     </div>
                   </Reveal>
                 </div>
@@ -305,7 +307,7 @@ export default function ServicePage() {
             {data.fullyManagedImage && (
               <Reveal className="lg:col-span-6" delay={0.05}>
                 <div className="frame aspect-[4/5]">
-                  <img src={data.fullyManagedImage} alt={`${data.h1} — fully managed build`} loading="lazy" />
+                  <OptimizedImage src={data.fullyManagedImage} alt={`${data.h1} — fully managed build`} loading="lazy" />
                 </div>
               </Reveal>
             )}
@@ -428,7 +430,7 @@ export default function ServicePage() {
                   className="group block"
                 >
                   <div className="frame aspect-[4/3]">
-                    <img src={p.image} alt={p.imageAlt} loading="lazy" />
+                    <OptimizedImage src={p.image} alt={p.imageAlt} loading="lazy" />
                   </div>
                   <div className="mt-5">
                     <div className="tracking-eyebrow text-[color:var(--gold-dark)] text-[11px]">
@@ -546,6 +548,10 @@ export default function ServicePage() {
           </Reveal>
         </div>
       </section>
+      <QuoteForm
+        formName={data.slug}
+        defaultProject={data.slug === "new-home-builds" ? "New Build" : "Renovation"}
+      />
     </div>
   );
 }

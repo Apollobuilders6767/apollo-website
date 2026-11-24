@@ -8,6 +8,7 @@ import SEO, {
 } from "@/components/SEO";
 
 import { Reveal, MaskLines } from "@/components/Reveal";
+import OptimizedImage from "@/components/OptimizedImage";
 
 export default function MelbourneHomeBuilders() {
   const canonical = "/melbourne-home-builders/";
@@ -89,6 +90,7 @@ export default function MelbourneHomeBuilders() {
         title="Melbourne Home Builders | Custom & New Homes | Apollo Builders"
         description="Looking for Melbourne home builders? Apollo Builders delivers custom homes, new builds, renovations, extensions and knockdown rebuilds across Melbourne's South-East."
         path={canonical}
+        canonicalPath="/"
         jsonLd={jsonLd}
       />
 
@@ -166,7 +168,7 @@ export default function MelbourneHomeBuilders() {
             >
               <div className="relative overflow-hidden bg-[color:var(--cream)]">
                 <div className="aspect-[4/5] lg:min-h-[650px]">
-                  <img
+                  <OptimizedImage
                     src="/images/apollo/new-home-builders-berwick.jpg"
                     alt="New residential home built in Berwick by Apollo Builders"
                     className="h-full w-full object-cover"
@@ -411,7 +413,7 @@ export default function MelbourneHomeBuilders() {
               <div className="lg:sticky lg:top-28">
                 <div className="overflow-hidden bg-[color:var(--cream)]">
                   <div className="aspect-[4/5]">
-                    <img
+                    <OptimizedImage
                       src="/images/apollo/melbourne-custom-home-builders-drouin.jpg"
                       alt="Custom residential home built by Apollo Builders in Melbourne"
                       className="h-full w-full object-cover transition-transform duration-700 hover:scale-[1.02]"
@@ -1128,7 +1130,7 @@ export default function MelbourneHomeBuilders() {
                   className="group flex h-full flex-col border-t border-[color:var(--hair)] pt-6"
                 >
                   <div className="aspect-[4/3] overflow-hidden bg-[color:var(--cream)]">
-                    <img
+                    <OptimizedImage
                       src={project.image}
                       alt={project.alt}
                       loading="lazy"

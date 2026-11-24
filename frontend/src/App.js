@@ -47,6 +47,7 @@ import DesignBuildMelbourne from "@/pages/DesignBuildMelbourne";
 
 import TrailingSlashRedirect from "@/components/TrailingSlashRedirect";
 import Analytics from "@/components/Analytics";
+import StickyCallBar from "@/components/StickyCallBar";
 import { Toaster } from "sonner";
 
 function ScrollTop() {
@@ -104,7 +105,7 @@ function ServiceSlugRedirect() {
 
 function App() {
   return (
-    <div className="App grain">
+    <div className="App grain pb-14 lg:pb-0">
       <HelmetProvider>
         <BrowserRouter basename={process.env.PUBLIC_URL || "/"}>
           <TrailingSlashRedirect />
@@ -156,6 +157,11 @@ function App() {
                 <Route
                   path="/our-projects"
                   element={<Projects />}
+                />
+
+                <Route
+                  path="/our-projects/endevour-hills-renovation"
+                  element={<Navigate to="/our-projects/endeavour-hills-renovation/" replace />}
                 />
 
                 <Route
@@ -316,6 +322,7 @@ function App() {
             </main>
 
             <Footer />
+            <StickyCallBar />
 
             <Toaster
               position="bottom-right"

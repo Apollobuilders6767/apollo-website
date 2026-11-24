@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 
 import { Reveal } from "@/components/Reveal";
+import OptimizedImage from "@/components/OptimizedImage";
 
 /* ---------------------------------------------
    Shared premium heading
@@ -168,7 +169,7 @@ function ImageLightbox({ images, activeIndex, onClose, onChange }) {
         className="flex max-h-full w-full max-w-[1100px] flex-col items-center gap-4"
         onClick={(event) => event.stopPropagation()}
       >
-        <img
+        <OptimizedImage
           src={image.src}
           alt={image.alt || "Bathroom renovation"}
           className="max-h-[78vh] w-full rounded-xl object-contain"
@@ -210,7 +211,7 @@ function FocusCard({ item, index, isActive, onToggle }) {
       >
         <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#F0E7D9]">
           {item.image && (
-            <img
+            <OptimizedImage
               src={item.image}
               alt={item.imageAlt || item.heading}
               loading="lazy"
@@ -420,7 +421,7 @@ export default function BathroomSolutions({ data }) {
             <Reveal className="lg:col-span-7" delay={0.05}>
               <div className="overflow-hidden rounded-2xl border border-[#E6D8C4] bg-[#FFFCF8] p-2 shadow-[0_12px_35px_rgba(20,25,30,0.07)]">
                 <div className="aspect-[4/3] overflow-hidden rounded-xl">
-                  <img
+                  <OptimizedImage
                     src={data.beforeAfter.image}
                     alt={data.beforeAfter.imageAlt}
                     className="h-full w-full object-cover"
@@ -454,7 +455,7 @@ export default function BathroomSolutions({ data }) {
                     className="group relative block w-full overflow-hidden rounded-2xl border border-[#E6D8C4] bg-[#F0E7D9] text-left shadow-[0_4px_18px_rgba(20,25,30,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-[#C5A05B] hover:shadow-[0_12px_30px_rgba(20,25,30,0.12)]"
                   >
                     <div className="aspect-[4/3] overflow-hidden">
-                      <img
+                      <OptimizedImage
                         src={img.src}
                         alt={img.alt}
                         loading="lazy"
@@ -523,7 +524,7 @@ export default function BathroomSolutions({ data }) {
               {data.designSection.image && (
                 <Reveal delay={0.05}>
                   <div className="h-full min-h-[300px] overflow-hidden rounded-2xl border border-[#E6D8C4] bg-[#F0E7D9] shadow-[0_8px_35px_rgba(31,42,55,0.045)]">
-                    <img
+                    <OptimizedImage
                       src={data.designSection.image}
                       alt={data.designSection.imageAlt}
                       loading="lazy"
